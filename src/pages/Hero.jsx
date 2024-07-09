@@ -2,7 +2,7 @@ import AcsIMG from "../assets/profilResmi/acs.png";
 const Hero = () => {
   return (
     <div>
-      <p>Ali Can</p>
+      <p className="text-3xl">Ali Can</p>
     </div>
   );
 };
