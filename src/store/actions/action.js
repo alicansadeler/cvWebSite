@@ -3,7 +3,11 @@ import axios from "axios";
 export const GET_TR = "TR DATA GETIR";
 export const GET_EU = "EU DATA GETIR";
 export const ACT_LANG = "DATA DIL TERCIHI";
+export const SET_LOADING = "SET_LOADING";
 
+export const setLoading = (isLoading) => {
+  return { type: SET_LOADING, payload: isLoading };
+};
 export const getDataTR = (dataTr) => {
   return { type: GET_TR, payload: dataTr };
 };
@@ -17,6 +21,7 @@ export const actLang = () => {
 };
 
 export const getDataTrAPI = () => (dispatch) => {
+  dispatch(setLoading(true));
   axios
     .get("https://668bdc690b61b8d23b0b7836.mockapi.io/acs/activetr")
     .then(function (response) {
@@ -34,6 +39,7 @@ export const getDataTrAPI = () => (dispatch) => {
 };
 
 export const getDataEuAPI = () => (dispatch) => {
+  dispatch(setLoading(true));
   axios
     .get("https://668bdc690b61b8d23b0b7836.mockapi.io/acs/activeeu")
     .then(function (response) {

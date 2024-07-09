@@ -14,14 +14,20 @@ import Footer from "./pages/Footer.jsx";
 import "./App.css";
 function App() {
   const toggle = useSelector((store) => store.active);
+  const loading = useSelector((store) => store.loading);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    if (toggle) {
-      dispatch(getDataTrAPI());
-    } else {
+    if (toggle === false) {
       dispatch(getDataEuAPI());
+    } else {
+      dispatch(getDataTrAPI());
     }
   }, [dispatch, toggle]);
+
+  if (loading) {
+    return <div>Yükleniyor...</div>;
+  }
   return (
     <>
       <Header />

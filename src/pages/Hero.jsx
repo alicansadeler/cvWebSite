@@ -3,14 +3,17 @@ import AcsIMG from "../assets/profilResmi/acs.png";
 
 const Hero = () => {
   const data = useSelector((store) => store.data);
-  const toggle = useSelector((store) => store.active);
 
-  const [[{ hero }]] = data;
+  if (data.length === 0 || !data[0] || !data[0][0]) {
+    return <div>Yükleniyor...</div>;
+  }
+
+  const heroData = data[0][0].hero;
 
   return (
     <div>
-      <h1>{hero.title}</h1>
-      <p>{hero.text}</p>
+      <h1>{heroData.title}</h1>
+      <p>{heroData.text}</p>
       <img
         src={AcsIMG}
         alt="Profil Resmi"
