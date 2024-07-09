@@ -1,9 +1,7 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
-  return (
-    <>
-      <p>Header Page</p>
-    </>
-  );
+  return <></>;
 };
 
 export default Header;

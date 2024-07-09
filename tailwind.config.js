@@ -1,13 +1,13 @@
-/** @type {import('tailwindcss').Config} */
-
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
+      width: {
+        476: "476px",
+      },
+      height: {
+        375: "375px",
       },
     },
   },
-  plugins: [],
+  // ... diğer konfigürasyonlar
 };
