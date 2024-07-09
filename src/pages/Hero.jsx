@@ -2,18 +2,13 @@ import AcsIMG from "../assets/profilResmi/acs.png";
 const Hero = () => {
   return (
     <div>
-      <p className="text-3xl">Ali Can</p>
+      <img
+        src={AcsIMG}
+        alt="Profil Resmi"
+        className="w-[29.75rem] h-[23.44rem] shadow-2xl rounded-2xl"
+      />
     </div>
   );
 };
 
 export default Hero;
-
-/*
-<img
-        src={AcsIMG}
-        alt="Profil Resmi"
-        className="w-[29rem] h-[21rem] shadow-lg border-2 border-gray-300 border-solid rounded-md"
-      />
-
-      */

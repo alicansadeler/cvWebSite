@@ -12,8 +12,8 @@ export const getDataEU = (dataEu) => {
   return { type: GET_EU, payload: dataEu };
 };
 
-export const actLang = (language) => {
-  return { type: ACT_LANG, payload: language };
+export const actLang = () => {
+  return { type: ACT_LANG };
 };
 
 export const getDataTrAPI = () => (dispatch) => {
