@@ -1,13 +1,8 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {
-      width: {
-        476: "476px",
-      },
-      height: {
-        375: "375px",
-      },
-    },
+    extend: {},
   },
-  // ... diğer konfigürasyonlar
+  plugins: [],
 };
