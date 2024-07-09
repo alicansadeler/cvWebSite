@@ -4,7 +4,6 @@ import Skills from "../components/Skills";
 const Profiles = () => {
   return (
     <>
-      Profile's Page
       <Skills />
       <Profile />
     </>

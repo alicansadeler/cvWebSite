@@ -21,12 +21,15 @@ const Header = () => {
         <Link to="/projects" className="text-blue-600 hover:text-blue-800">
           Projects
         </Link>
+        <Link to="/profiles" className="text-blue-600 hover:text-blue-800">
+          Profiles
+        </Link>
       </nav>
       <button
         onClick={toggleClick}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
-        {toggle ? "English" : "Türkçe'ye Geç"}
+        {toggle ? "ENGLISH" : "TÜRKÇE'YE GEÇ"}
       </button>
     </header>
   );
