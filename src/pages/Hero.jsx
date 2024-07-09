@@ -1,7 +1,16 @@
+import { useSelector } from "react-redux";
 import AcsIMG from "../assets/profilResmi/acs.png";
+
 const Hero = () => {
+  const data = useSelector((store) => store.data);
+  const toggle = useSelector((store) => store.active);
+
+  const [[{ hero }]] = data;
+
   return (
     <div>
+      <h1>{hero.title}</h1>
+      <p>{hero.text}</p>
       <img
         src={AcsIMG}
         alt="Profil Resmi"

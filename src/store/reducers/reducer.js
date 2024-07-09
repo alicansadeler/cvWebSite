@@ -15,12 +15,12 @@ export const reducer = (state = initialState, action) => {
     case GET_TR:
       return {
         ...state,
-        data: [...state.data, action.payload],
+        data: [action.payload],
       };
     case GET_EU:
       return {
         ...state,
-        data: [...state.data, action.payload],
+        data: [action.payload],
       };
     default:
       return state;
