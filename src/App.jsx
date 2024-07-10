@@ -13,6 +13,7 @@ import Footer from "./pages/Footer.jsx";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Toogle } from "./pages/Toogle.jsx";
 
 function App() {
   const toggle = useSelector((store) => store.active);
@@ -32,6 +33,7 @@ function App() {
   }
   return (
     <>
+      <Toogle />
       <Header />
       <Switch>
         <Route path="/profiles">
