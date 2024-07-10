@@ -12,6 +12,8 @@ import Header from "./pages/Header.jsx";
 import Footer from "./pages/Footer.jsx";
 
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function App() {
   const toggle = useSelector((store) => store.active);
   const loading = useSelector((store) => store.loading);

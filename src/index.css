@@ -27,13 +27,21 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  width: 100vw;
+  max-width: 1144px;
+  height: 100vh;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+header {
+  width: 71.3rem;
+  height: auto;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
