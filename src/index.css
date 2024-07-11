@@ -19,11 +19,10 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  background-color: none !important;
 }
 
 body {
@@ -44,13 +43,11 @@ p {
   color: rgba(107, 114, 128, 1);
 }
 header {
-  width: 71.3rem;
-  height: auto;
+  width: 100vw;
+  max-width: 1142px;
+  height: 65px;
 }
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+
 h3 {
   color: rgba(67, 56, 202, 1);
   font-weight: medium;
@@ -59,7 +56,7 @@ h3 {
 hr {
   border: none;
   height: 2px;
-  background-color: rgba(186, 178, 231, 1);
+  background-color: rgba(67, 56, 202, 1);
   margin: 5.6rem 0;
 }
 button {

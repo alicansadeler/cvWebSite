@@ -45,7 +45,7 @@ function App() {
         </Route>
 
         <Route path="/" exact>
-          <div className="my-[5.6rem]">
+          <div className="my-0 ">
             <div className="my-8 md:my-12 lg:my-16">
               <Hero />
             </div>
