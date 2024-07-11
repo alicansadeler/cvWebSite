@@ -20,7 +20,7 @@ export default function Projects() {
 
   return (
     <>
-      <h2 className="text-5xl font-semibold  text-left py-11">Projects</h2>
+      <h2 className="text-5xl font-semibold  text-left py-0">Projects</h2>
       <div className="flex flex-wrap  w-full gap-20">
         {projeData.map((proje, index) => (
           <div key={index} className="max-w-sm bg-white  overflow-hidden w-80 ">

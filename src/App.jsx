@@ -45,20 +45,20 @@ function App() {
         </Route>
 
         <Route path="/" exact>
-          <div className="my-0 ">
-            <div className="my-8 md:my-12 lg:my-16">
+          <div className="my-0 space-y-10">
+            <div className=" md:my-12 lg:my-32">
               <Hero />
             </div>
-            <hr />
-            <div className="my-8 md:my-12 lg:my-16">
+
+            <div className=" md:my-8 lg:my-8">
               <Skills />
             </div>
             <hr />
-            <div className="my-8 md:my-12 lg:my-16">
+            <div className=" md:my-8 lg:my-8">
               <Profile />
             </div>
             <hr />
-            <div className="my-8 md:my-12 lg:my-16">
+            <div className=" md:my-8 lg:my-8">
               <Projects />
             </div>
           </div>

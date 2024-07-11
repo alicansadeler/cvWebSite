@@ -12,6 +12,7 @@ export const Profile = () => {
   return (
     <>
       <div>
+        <h2 className="text-5xl font-semibold  text-left py-0">Profile</h2>
         <h2>{profileData.title1}</h2>
         <ul>
           {Object.entries(profileData.items[0].details).map(([key, value]) => (
