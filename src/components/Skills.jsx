@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-const Skills = () => {
+export const Skills = () => {
   const data = useSelector((store) => store.data);
 
   if (data.length === 0 || !data[0] || !data[0][0]) {
@@ -8,7 +8,6 @@ const Skills = () => {
   }
 
   const skillData = data[0][0].skills;
-  console.log(skillData);
 
   const skills = skillData.map((skill, index) => {
     return (
@@ -23,5 +22,3 @@ const Skills = () => {
   });
   return <div className="flex flex-wrap gap-6">{skills}</div>;
 };
-
-export default Skills;

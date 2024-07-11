@@ -2,7 +2,9 @@ import { Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import { getDataEuAPI, getDataTrAPI } from "./store/actions/action";
 import { useEffect } from "react";
-
+import { Toogle } from "./pages/Toogle.jsx";
+import { Skills } from "./components/Skills.jsx";
+import { Profile } from "./components/Profile.jsx";
 import { useDispatch, useSelector } from "react-redux";
 
 import Hero from "./pages/Hero.jsx";
@@ -13,7 +15,6 @@ import Footer from "./pages/Footer.jsx";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Toogle } from "./pages/Toogle.jsx";
 
 function App() {
   const toggle = useSelector((store) => store.active);
@@ -44,7 +45,23 @@ function App() {
         </Route>
 
         <Route path="/" exact>
-          <Hero />
+          <div className="my-[5.6rem]">
+            <div className="my-8 md:my-12 lg:my-16">
+              <Hero />
+            </div>
+            <hr />
+            <div className="my-8 md:my-12 lg:my-16">
+              <Skills />
+            </div>
+            <hr />
+            <div className="my-8 md:my-12 lg:my-16">
+              <Profile />
+            </div>
+            <hr />
+            <div className="my-8 md:my-12 lg:my-16">
+              <Projects />
+            </div>
+          </div>
         </Route>
       </Switch>
       <Footer />

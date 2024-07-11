@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-const Profile = () => {
+export const Profile = () => {
   const data = useSelector((store) => store.data);
 
   if (data.length === 0 || !data[0] || !data[0][0]) {
@@ -28,5 +28,3 @@ const Profile = () => {
     </>
   );
 };
-
-export default Profile;

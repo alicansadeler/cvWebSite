@@ -1,10 +1,3 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import AcsIMG from "../assets/projectsResim/Rectangle 41.png";
 import AcsIMG2 from "../assets/projectsResim/Rectangle 42.png";
 import AcsIMG3 from "../assets/projectsResim/Rectangle 43.png";
@@ -18,8 +11,7 @@ export default function Projects() {
   }
 
   const projeData = data[0][0].projects;
-
-  // Proje resimlerini map ile ilişkilendir
+  const technologies = ["react", "redux", "axios"];
   const resimler = {
     0: AcsIMG,
     1: AcsIMG2,
@@ -28,57 +20,43 @@ export default function Projects() {
 
   return (
     <>
-      <h2>Projects</h2>
-      <div className="flex flex-wrap gap-10">
+      <h2 className="text-5xl font-semibold  text-left py-11">Projects</h2>
+      <div className="flex flex-wrap  w-full gap-20">
         {projeData.map((proje, index) => (
-          <Card sx={{ maxWidth: 345 }} key={index}>
-            <CardMedia
-              sx={{ height: 140 }}
-              image={resimler[index]} // Index’e göre resmi göster
-              title={proje.title} // Proje başlığını başlık olarak kullan
+          <div key={index} className="max-w-sm bg-white  overflow-hidden w-80 ">
+            <img
+              className="w-full h-44 object-cover"
+              src={resimler[index]}
+              alt={proje.title}
             />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h3">
+            <div className="py-10">
+              {" "}
+              <h3 className="text-xl font-semibold mb-2 text-left">
                 {proje.title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary" component="p">
+              </h3>
+              <p className="text-gray-600 text-sm mb-4 text-left">
                 {proje.text}
-              </Typography>
-            </CardContent>
-            <CardContent>
-              <div className="flex gap-4 ">
-                <div className="p-1 mb-2 w-16 rounded text-[rgba(55,48,163,1)] border-2 border-solid border-[rgba(55,48,163,1)]  ">
-                  <Typography variant="body2" component="span">
-                    react
-                  </Typography>
-                </div>
-                <div className="p-1 mb-2 w-16 rounded text-[rgba(55,48,163,1)] border-2 border-solid border-[rgba(55,48,163,1)]">
-                  <Typography variant="body2" component="span">
-                    redux
-                  </Typography>
-                </div>
-                <div className="p-1 mb-2 w-16 rounded text-[rgba(55,48,163,1)] border-2 border-solid border-[rgba(55,48,163,1)]">
-                  <Typography variant="body2" component="span">
-                    axios
-                  </Typography>
-                </div>
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {technologies.map((item) => (
+                  <span
+                    key={item}
+                    className="px-3 py-1 text-sm rounded text-[rgba(55,48,163,1)] border-2 border-[rgba(55,48,163,1)]"
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
-            </CardContent>
-            <CardActions>
-              <button
-                href="#"
-                className="text-[rgba(55,48,163,1)] bg-white border-none"
-              >
-                Github
-              </button>
-              <button
-                href="#"
-                className="text-[rgba(55,48,163,1)] bg-white border-none"
-              >
-                View Site
-              </button>
-            </CardActions>
-          </Card>
+              <div className="flex justify-between">
+                <button className="text-[rgba(55,48,163,1)] bg-white underline px-0">
+                  Github
+                </button>
+                <button className="text-[rgba(55,48,163,1)] bg-white underline ">
+                  View Site
+                </button>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </>
