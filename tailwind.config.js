@@ -12,6 +12,7 @@ module.exports = {
         "custom-navbartext": "rgba(107, 114, 128, 1)",
         "custom-toggletext": "rgba(119, 119, 119, 1)",
         "custom-headerdaire": "rgba(238, 235, 255, 1)",
+        "custom-mail": "rgba(175, 12, 72, 1)",
       },
     },
   },

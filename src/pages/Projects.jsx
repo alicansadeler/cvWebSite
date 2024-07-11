@@ -31,13 +31,13 @@ export default function Projects() {
             />
             <div className="py-2">
               {" "}
-              <h3 className="text-xl font-semibold mb-2 text-left text-custom-isim">
+              <h3 className="text-2xl font-normal mb-2 text-left text-custom-isim">
                 {proje.title}
               </h3>
               <p className="text-gray-600  mb-4 text-left text-[14px]">
                 {proje.text}
               </p>
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-2 ">
                 {technologies.map((item) => (
                   <span
                     key={item}
