@@ -19,9 +19,9 @@ export default function Projects() {
   };
 
   return (
-    <>
-      <h2 className="text-5xl font-semibold  text-left py-0">Projects</h2>
-      <div className="flex flex-wrap  w-full gap-20">
+    <div className="space-y-8">
+      <h2 className="text-5xl font-semibold  text-left  ">Projects</h2>
+      <div className="flex flex-wrap justify-between w-full">
         {projeData.map((proje, index) => (
           <div key={index} className="max-w-sm bg-white  overflow-hidden w-80 ">
             <img
@@ -29,29 +29,29 @@ export default function Projects() {
               src={resimler[index]}
               alt={proje.title}
             />
-            <div className="py-10">
+            <div className="py-2">
               {" "}
-              <h3 className="text-xl font-semibold mb-2 text-left">
+              <h3 className="text-xl font-semibold mb-2 text-left text-custom-isim">
                 {proje.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4 text-left">
+              <p className="text-gray-600  mb-4 text-left text-[14px]">
                 {proje.text}
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {technologies.map((item) => (
                   <span
                     key={item}
-                    className="px-3 py-1 text-sm rounded text-[rgba(55,48,163,1)] border-2 border-[rgba(55,48,163,1)]"
+                    className="px-3 py-1 text-[14px] rounded text-custom-isim border-1 border-custom-isim"
                   >
                     {item}
                   </span>
                 ))}
               </div>
               <div className="flex justify-between">
-                <button className="text-[rgba(55,48,163,1)] bg-white underline px-0">
+                <button className="text-custom-isim bg-white underline px-0">
                   Github
                 </button>
-                <button className="text-[rgba(55,48,163,1)] bg-white underline ">
+                <button className="text-custom-isim bg-white underline ">
                   View Site
                 </button>
               </div>
@@ -59,6 +59,6 @@ export default function Projects() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
