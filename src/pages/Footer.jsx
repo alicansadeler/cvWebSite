@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <>
-      <h3>{footerData.text}</h3>
+      <h4>{footerData.text}</h4>
       <p>alicansadeler@gmail.com</p>
     </>
   );

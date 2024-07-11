@@ -37,8 +37,12 @@ body {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-}
 
+  font-family: "Inter", sans-serif;
+}
+p {
+  color: rgba(107, 114, 128, 1);
+}
 header {
   width: 71.3rem;
   height: auto;
@@ -47,7 +51,11 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
+h3 {
+  color: rgba(67, 56, 202, 1);
+  font-weight: medium;
+  font-size: 1.875rem;
+}
 button {
   border-radius: 8px;
   background-color: none;
@@ -74,5 +82,12 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header {
+    float: none;
+    display: block;
+    text-align: left;
   }
 }

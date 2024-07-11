@@ -29,7 +29,7 @@ export default function Projects() {
   return (
     <>
       <h2>Projects</h2>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-10">
         {projeData.map((proje, index) => (
           <Card sx={{ maxWidth: 345 }} key={index}>
             <CardMedia
@@ -38,27 +38,27 @@ export default function Projects() {
               title={proje.title} // Proje başlığını başlık olarak kullan
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+              <Typography gutterBottom variant="h5" component="h3">
                 {proje.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="text.secondary" component="p">
                 {proje.text}
               </Typography>
             </CardContent>
             <CardContent>
               <div className="flex gap-4 ">
                 <div className="p-1 mb-2 w-16 rounded text-[rgba(55,48,163,1)] border-2 border-solid border-[rgba(55,48,163,1)]  ">
-                  <Typography variant="body2" component="p">
+                  <Typography variant="body2" component="span">
                     react
                   </Typography>
                 </div>
                 <div className="p-1 mb-2 w-16 rounded text-[rgba(55,48,163,1)] border-2 border-solid border-[rgba(55,48,163,1)]">
-                  <Typography variant="body2" component="p">
+                  <Typography variant="body2" component="span">
                     redux
                   </Typography>
                 </div>
                 <div className="p-1 mb-2 w-16 rounded text-[rgba(55,48,163,1)] border-2 border-solid border-[rgba(55,48,163,1)]">
-                  <Typography variant="body2" component="p">
+                  <Typography variant="body2" component="span">
                     axios
                   </Typography>
                 </div>

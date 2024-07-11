@@ -12,12 +12,13 @@ const Hero = () => {
 
   return (
     <div>
-      <h1>{heroData.title}</h1>
+      <h1>{heroData.title1}</h1>
+      <h1>{heroData.title2}</h1>
       <p>{heroData.text}</p>
       <img
         src={AcsIMG}
         alt="Profil Resmi"
-        className="w-[29.75rem] h-[23.44rem] shadow-2xl rounded-2xl"
+        className="w-[29.75rem] h-[23.44rem] shadow-2xl rounded-2xl border-1 border-black"
       />
     </div>
   );

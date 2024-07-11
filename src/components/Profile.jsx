@@ -22,7 +22,7 @@ const Profile = () => {
         </ul>
       </div>
       <div>
-        <h2>{profileData.title2}</h2>
+        <h3>{profileData.title2}</h3>
         <p>{profileData.items[1].text}</p>
       </div>
     </>
