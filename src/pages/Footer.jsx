@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className="p-20">
-      <div className="flex flex-col items-start space-y-8 border-2 w-[1142px]">
+      <div className="flex flex-col items-start space-y-8  w-[1142px]">
         <h4 className="font-semibold text-[2.5rem] w-[540px] text-left">
           {footerData.text}
         </h4>

@@ -33,7 +33,7 @@ function App() {
     return <div>Yükleniyor...</div>;
   }
   return (
-    <>
+    <div className="app-container">
       <Toogle />
       <Header />
       <Switch>
@@ -65,7 +65,7 @@ function App() {
         </Route>
       </Switch>
       <Footer />
-    </>
+    </div>
   );
 }
 

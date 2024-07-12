@@ -27,7 +27,7 @@ a:hover {
 
 body {
   width: 100vw;
-  max-width: 1144px;
+
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -41,11 +41,6 @@ body {
 }
 p {
   color: rgba(107, 114, 128, 1);
-}
-header {
-  width: 100vw;
-  max-width: 1142px;
-  height: 65px;
 }
 
 h3 {
