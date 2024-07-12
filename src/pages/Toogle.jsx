@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { actLang } from "../store/actions/action";
-import { useState } from "react";
+import { actLang, getMode } from "../store/actions/action";
 
 export const Toogle = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const activeMode = useSelector((store) => store.mode);
   const toggle = useSelector((store) => store.active);
   const dispatch = useDispatch();
 
@@ -11,7 +10,7 @@ export const Toogle = () => {
     dispatch(actLang());
   };
   const modeClick = () => {
-    setDarkMode(!darkMode);
+    dispatch(getMode());
   };
   return (
     <>
@@ -22,13 +21,13 @@ export const Toogle = () => {
             className="sr-only peer"
             data-testid="darkMode-toggle"
             onChange={modeClick}
-            checked={darkMode}
+            checked={activeMode}
           />
 
           <div className="w-11 h-6  rounded-full  peer-checked:border-custom-purple peer-checked:bg-custom-purple peer-focus:ring-4 peer-focus:ring-custom-purple dark:bg-custom-yellow peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-custom-yellow peer-checked:after:bg-custom-yellow after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600"></div>
         </label>
         <span className="text-custom-toggletext font-semibold text-[15px]">
-          {darkMode ? "DARK MODE" : "LİGHT MODE"}
+          {activeMode ? "DARK MODE" : "LİGHT MODE"}
         </span>
         <span className="text-custom-toggletext">|</span>
         <button

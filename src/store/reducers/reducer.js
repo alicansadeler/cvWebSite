@@ -1,9 +1,10 @@
-import { ACT_LANG, GET_EU, GET_TR } from "../actions/action";
+import { ACT_LANG, GET_EU, GET_MODE, GET_TR } from "../actions/action";
 
 const initialState = {
   data: [],
   active: JSON.parse(localStorage.getItem("active")) || false,
   loading: true,
+  mode: JSON.parse(localStorage.getItem("mode")) || "check",
 };
 
 export const reducer = (state = initialState, action) => {
@@ -27,6 +28,13 @@ export const reducer = (state = initialState, action) => {
         ...state,
         data: [action.payload],
         loading: false,
+      };
+    case GET_MODE:
+      const newMode = !state.mode;
+      localStorage.setItem("mode", JSON.stringify(newMode));
+      return {
+        ...state,
+        mode: newMode,
       };
     default:
       return state;

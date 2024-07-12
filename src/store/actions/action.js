@@ -4,10 +4,16 @@ export const GET_TR = "TR DATA GETIR";
 export const GET_EU = "EU DATA GETIR";
 export const ACT_LANG = "DATA DIL TERCIHI";
 export const SET_LOADING = "SET_LOADING";
+export const GET_MODE = "GET_MODE";
 
 export const setLoading = (isLoading) => {
   return { type: SET_LOADING, payload: isLoading };
 };
+
+export const getMode = () => {
+  return { type: GET_MODE };
+};
+
 export const getDataTR = (dataTr) => {
   return { type: GET_TR, payload: dataTr };
 };
