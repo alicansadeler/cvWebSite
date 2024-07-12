@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { actLang, getMode } from "../store/actions/action";
+import { useEffect } from "react";
 
 export const Toogle = () => {
   const activeMode = useSelector((store) => store.mode);
@@ -12,6 +13,23 @@ export const Toogle = () => {
   const modeClick = () => {
     dispatch(getMode());
   };
+  useEffect(() => {
+    if (!activeMode) {
+      document.body.style.backgroundColor = "rgba(37, 33, 40, 1)";
+
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.style.backgroundColor = "rgba(37, 33, 40, 1)";
+      });
+    } else {
+      document.body.style.backgroundColor = "white";
+
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((button) => {
+        button.style.backgroundColor = "white";
+      });
+    }
+  }, [activeMode]);
   return (
     <>
       <div className="flex items-center justify-end  space-x-6  ">
@@ -19,7 +37,6 @@ export const Toogle = () => {
           <input
             type="checkbox"
             className="sr-only peer"
-            data-testid="darkMode-toggle"
             onChange={modeClick}
             checked={activeMode}
           />
@@ -32,7 +49,7 @@ export const Toogle = () => {
         <span className="text-custom-toggletext">|</span>
         <button
           onClick={toggleClick}
-          className={`flex items-center  p-0 text-sm  bg-white`}
+          className={`flex items-center  p-0 text-sm `}
         >
           <span className="text-custom-toggletext font-semibold text-[15px]">
             {toggle ? (

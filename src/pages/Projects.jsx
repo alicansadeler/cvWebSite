@@ -23,7 +23,7 @@ export default function Projects() {
       <h2 className="text-5xl font-semibold  text-left  ">Projects</h2>
       <div className="flex flex-wrap justify-between w-full">
         {projeData.map((proje, index) => (
-          <div key={index} className="max-w-sm bg-white  overflow-hidden w-80 ">
+          <div key={index} className="max-w-sm   overflow-hidden w-80 ">
             <img
               className="w-full h-44 object-cover"
               src={resimler[index]}
@@ -48,10 +48,10 @@ export default function Projects() {
                 ))}
               </div>
               <div className="flex justify-between">
-                <button className="text-custom-isim bg-white underline px-0">
+                <button className="text-custom-isim underline px-0">
                   Github
                 </button>
-                <button className="text-custom-isim bg-white underline ">
+                <button className="text-custom-isim underline ">
                   View Site
                 </button>
               </div>

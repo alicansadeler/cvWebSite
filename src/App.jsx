@@ -53,11 +53,11 @@ function App() {
             <div className=" md:my-8 lg:my-8">
               <Skills />
             </div>
-            <hr />
+            <hr className="bg-custom-isim" />
             <div className=" md:my-8 lg:my-8">
               <Profile />
             </div>
-            <hr />
+            <hr className="bg-custom-isim" />
             <div className=" md:my-8 lg:my-8">
               <Projects />
             </div>

@@ -15,8 +15,8 @@ const Hero = () => {
   return (
     <div className="space-y-8">
       <div className="flex items-center  h-[45px] py-0">
-        <hr className="w-[6vw]   border-custom-isim" />
-        <span className="px-3  bg-white text-custom-link font-semibold">
+        <hr className="w-[6vw]   border-custom-isim bg-custom-isim" />
+        <span className="px-3  text-custom-link font-semibold">
           Ali Can Sadeler
         </span>
       </div>

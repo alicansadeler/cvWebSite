@@ -28,7 +28,7 @@ a:hover {
 body {
   width: 100vw;
 
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -52,14 +52,13 @@ footer {
   width: 100vw;
   max-width: 1440px;
   height: 20vw;
-  background-color: rgba(249, 249, 249, 1);
 
   transform: translateX(-6.25%);
 }
 hr {
   border: none;
   height: 2px;
-  background-color: rgba(67, 56, 202, 1);
+
   margin: 4rem 0;
 }
 button {
@@ -68,7 +67,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: "Inter", sans-serif;
 
   cursor: pointer;
 }

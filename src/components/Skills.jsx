@@ -11,10 +11,7 @@ export const Skills = () => {
 
   const skills = skillData.map((skill, index) => {
     return (
-      <div
-        className="w-full md:w-1/3 p-2 bg-white text-left space-y-8"
-        key={index}
-      >
+      <div className="w-full md:w-1/3 p-2 text-left space-y-8" key={index}>
         <h3>{skill.title}</h3>
         <p>{skill.text}</p>
       </div>

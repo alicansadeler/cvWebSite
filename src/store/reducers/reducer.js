@@ -1,10 +1,25 @@
 import { ACT_LANG, GET_EU, GET_MODE, GET_TR } from "../actions/action";
 
+const result = () => {
+  if (JSON.parse(localStorage.getItem("active")) === null) {
+    return false;
+  } else {
+    return true;
+  }
+};
+const darkMode = () => {
+  if (JSON.parse(localStorage.getItem("mode"))) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 const initialState = {
   data: [],
-  active: JSON.parse(localStorage.getItem("active")) || false,
+  active: result(),
   loading: true,
-  mode: JSON.parse(localStorage.getItem("mode")) || "check",
+  mode: darkMode(),
 };
 
 export const reducer = (state = initialState, action) => {
