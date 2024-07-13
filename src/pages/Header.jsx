@@ -5,8 +5,12 @@ const Header = () => {
   return (
     <header className="flex flex-col sm:flex-row justify-between items-center px-0 py-2  sm:space-y-0">
       <div className="flex items-center space-x-2">
-        <div className="w-14 h-14 bg-custom-headerdaire rounded-full flex items-center justify-center">
-          <span className="text-custom-daire font-semibold text-xl rotate-[25deg]">
+        <div className="w-14 h-14 bg-custom-headerdaire rounded-full flex items-center justify-center dark:bg-custom-dark-daire">
+          <span
+            className="text-custom-daire font-semibold text-xl rotate-[25deg]
+            dark:text-custom-dark-daireText
+          "
+          >
             A
           </span>
         </div>
@@ -31,7 +35,7 @@ const Header = () => {
           </Link>
         </nav>
         <Link
-          className="px-4 py-2 text-custom-link border-1  border-custom-link rounded-md hover:text-custom-link  w-full sm:w-auto text-center"
+          className="px-4 py-2 text-custom-link border-1  border-custom-link rounded-md hover:text-custom-link  w-full sm:w-auto text-center dark:bg-custom-paragraf"
           to="/"
         >
           Hire me

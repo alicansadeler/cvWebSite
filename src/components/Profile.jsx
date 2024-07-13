@@ -15,12 +15,16 @@ export const Profile = () => {
       <div className="flex justify-between">
         <div className="space-y-8 text-left">
           <h3>{profileData.title1}</h3>
-          <ul className="flex flex-col w-full max-w-2xl">
+          <ul className="flex flex-col w-full max-w-2xl dark:text-custom-paragraf">
             {Object.entries(profileData.items[0].details).map(
               ([key, value]) => (
                 <li key={key} className="flex mb-0">
-                  <div className="font-semibold text-[18px] w-1/3 ">{key}</div>
-                  <div className="p-0 flex-1 min-h-[40px]">{value}</div>
+                  <div className="font-semibold text-[1.125rem] w-1/3 ">
+                    {key}
+                  </div>
+                  <div className="p-0 flex-1 min-h-[40px] font-normal">
+                    {value}
+                  </div>
                 </li>
               )
             )}

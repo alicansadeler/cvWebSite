@@ -52,6 +52,6 @@ body {
 }
 
 footer {
-  @apply mt-0 h-[409px] max-w-[1440px];
+  @apply h-[409px] max-w-[1440px] mt-[135px];
   @apply dark:!bg-custom-dark-footer dark:!max-w-none dark:!w-[100vw];
 }

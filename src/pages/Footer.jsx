@@ -10,7 +10,7 @@ const Footer = () => {
   const footerData = data[0][0].footer;
 
   return (
-    <footer className="p-20 mt-0 bg-custom-footer dark:absolute dark:left-0 dark:flex dark:justify-center">
+    <footer className="p-20  bg-custom-footer dark:absolute dark:left-0 dark:flex dark:justify-center">
       <div className="flex flex-col items-start space-y-20  w-[1142px]">
         <h4 className="font-semibold text-[2.5rem] w-[540px] text-left dark:text-custom-title">
           {footerData.text}
