@@ -16,16 +16,20 @@ const Hero = () => {
     <div className="space-y-8">
       <div className="flex items-center  h-[45px] py-0">
         <hr className="w-[6vw]   border-custom-isim bg-custom-isim" />
-        <span className="px-3  text-custom-link font-semibold">
+        <span className="px-3  text-custom-link font-semibold dark:text-custom-dark-h3">
           Ali Can Sadeler
         </span>
       </div>
       <section className="flex flex-wrap-reverse justify-between w-full sm:flex sm:flex-row sm:items-center">
         <div className="font-bold drop-shadow-xl  lg:text-left  w-[37.25rem] ">
-          <h1 className="md:text-[4.5rem]">
-            <span className="inline-block">{heroData.title1}</span>
+          <h1 className="text-[4.5rem]">
+            <span className="inline-block dark:text-custom-title">
+              {heroData.title1}
+            </span>
             <br />
-            <span className="inline-block">{heroData.title2}</span>
+            <span className="inline-block dark:text-custom-title">
+              {heroData.title2}
+            </span>
           </h1>
 
           <p className="text-lg font-normal drop-shadow-none leading-7 my-14 sm:text-center lg:text-left">

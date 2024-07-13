@@ -34,36 +34,40 @@ function App() {
   }
   return (
     <div className="app-container">
-      <Toogle />
-      <Header />
-      <Switch>
-        <Route path="/profiles">
-          <Profiles />
-        </Route>
-        <Route path="/projects">
-          <Projects />
-        </Route>
-
-        <Route path="/" exact>
-          <div className="my-0 space-y-10">
-            <div className=" md:my-12 lg:my-32">
-              <Hero />
-            </div>
-
-            <div className=" md:my-8 lg:my-8">
-              <Skills />
-            </div>
-            <hr className="bg-custom-isim" />
-            <div className=" md:my-8 lg:my-8">
-              <Profile />
-            </div>
-            <hr className="bg-custom-isim" />
-            <div className=" md:my-8 lg:my-8">
+      <div className="flex justify-center">
+        <div className="app-item2 w-full max-w-screen-lg">
+          <Toogle />
+          <Header />
+          <Switch>
+            <Route path="/profiles">
+              <Profiles />
+            </Route>
+            <Route path="/projects">
               <Projects />
+            </Route>
+            <div className="my-0 space-y-10">
+              <Route path="/" exact>
+                <div className="md:my-12 lg:my-32">
+                  <Hero />
+                </div>
+
+                <div className="md:my-8 lg:my-8">
+                  <Skills />
+                </div>
+                <hr />
+                <div className="md:my-8 lg:my-8">
+                  <Profile />
+                </div>
+                <hr />
+                <div className="md:my-8 lg:my-8">
+                  <Projects />
+                </div>
+              </Route>
             </div>
-          </div>
-        </Route>
-      </Switch>
+          </Switch>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

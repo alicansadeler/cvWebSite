@@ -14,20 +14,12 @@ export const Toogle = () => {
     dispatch(getMode());
   };
   useEffect(() => {
-    if (!activeMode) {
-      document.body.style.backgroundColor = "rgba(37, 33, 40, 1)";
-
-      const buttons = document.querySelectorAll("button");
-      buttons.forEach((button) => {
-        button.style.backgroundColor = "rgba(37, 33, 40, 1)";
-      });
+    if (activeMode) {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
     } else {
-      document.body.style.backgroundColor = "white";
-
-      const buttons = document.querySelectorAll("button");
-      buttons.forEach((button) => {
-        button.style.backgroundColor = "white";
-      });
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
     }
   }, [activeMode]);
   return (

@@ -17,82 +17,39 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  text-decoration: inherit;
-}
-a:hover {
-  background-color: none !important;
+body.light {
+  @apply bg-white;
 }
 
-body {
-  width: 100vw;
-
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-
-  font-family: "Inter", sans-serif;
+body.dark {
+  @apply bg-custom-darkmode;
 }
+
 p {
-  color: rgba(107, 114, 128, 1);
+  @apply text-custom-metin dark:text-custom-paragraf;
 }
 
 h3 {
-  color: rgba(67, 56, 202, 1);
-  font-weight: medium;
-  font-size: 1.875rem;
+  @apply text-custom-isim text-[1.875rem] dark:text-custom-dark-h3;
 }
-footer {
-  width: 100vw;
-  max-width: 1440px;
-  height: 20vw;
 
-  transform: translateX(-6.25%);
+h2 {
+  @apply text-5xl font-semibold dark:text-custom-title;
 }
+
 hr {
-  border: none;
-  height: 2px;
-
-  margin: 4rem 0;
+  @apply border-none h-[2px] my-4 bg-custom-isim dark:bg-custom-dark-h3;
 }
+
 button {
-  border-radius: 8px;
-  background-color: none;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: "Inter", sans-serif;
-
-  cursor: pointer;
+  @apply rounded-lg  py-2.5 px-5 text-base font-medium font-[Inter] cursor-pointer bg-white shadow-none border-none appearance-none dark:bg-custom-darkmode !important;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+body {
+  @apply w-screen text-base h-auto flex flex-wrap justify-center items-start relative left-1/2 -translate-x-1/2 font-[Inter];
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-@media screen and (max-width: 500px) {
-  .header {
-    float: none;
-    display: block;
-    text-align: left;
-  }
+footer {
+  @apply mt-0 h-auto max-w-[1440px];
+  @apply dark:!bg-custom-dark-footer dark:!max-w-none dark:!w-[100vw] mx-10;
 }

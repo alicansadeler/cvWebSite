@@ -10,7 +10,7 @@ const Footer = () => {
   const footerData = data[0][0].footer;
 
   return (
-    <footer className="p-20">
+    <footer className="p-20 mt-0 bg-custom-footer">
       <div className="flex flex-col items-start space-y-8  w-[1142px]">
         <h4 className="font-semibold text-[2.5rem] w-[540px] text-left">
           {footerData.text}
@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="flex items-center gap-2">
           <img src={ok} alt="ok" className="w-6 h-6" />{" "}
           {/* Resim boyutunu ayarlayabilirsiniz */}
-          <p className="font-normal text-custom-mail text-[1.2rem]">
+          <p className="font-normal bg-custom-footer text-custom-mail text-[1.2rem]">
             alicansadeler@gmail.com
           </p>
         </div>
