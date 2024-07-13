@@ -1,7 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const data = useSelector((store) => store.data[0][0]);
+  const headerData = data["header"];
+
   return (
     <header className="flex flex-col sm:flex-row justify-between items-center px-0 py-2  sm:space-y-0 mt-[25px]">
       <div className="flex items-center space-x-2">
@@ -22,16 +26,16 @@ const Header = () => {
             to="/profiles"
             className="text-custom-navbartext hover:text-none"
           >
-            Skills
+            {headerData.title1}
           </Link>
           <Link
             to="/projects"
             className="text-custom-navbartext hover:text-none"
           >
-            Projects
+            {headerData.title2}
           </Link>
           <Link to="/" className="text-custom-navbartext hover:text-none">
-            Contact
+            {headerData.title3}
           </Link>
         </nav>
         <Link

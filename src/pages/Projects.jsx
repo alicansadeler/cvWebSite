@@ -9,7 +9,7 @@ export default function Projects() {
   if (data.length === 0 || !data[0] || !data[0][0]) {
     return <div>Yükleniyor...</div>;
   }
-
+  const headerData = data[0][0]["header"];
   const projeData = data[0][0].projects;
   const technologies = ["react", "redux", "axios"];
   const resimler = {
@@ -20,7 +20,7 @@ export default function Projects() {
 
   return (
     <div className="space-y-8">
-      <h2 className="text-left">Projects</h2>
+      <h2 className="text-left">{headerData.title2}</h2>
       <div className="flex flex-wrap justify-between w-full">
         {projeData.map((proje, index) => (
           <div key={index} className="max-w-sm   overflow-hidden w-80 ">

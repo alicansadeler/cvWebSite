@@ -37,6 +37,11 @@ module.exports = {
         "custom-dark-toggleSwitch": "rgba(217, 217, 217, 1)",
         "custom-dark-toggleDeActive": "rgba(58, 58, 58, 1)",
       },
+
+      backgroundImage: {
+        "half-moon":
+          "radial-gradient(circle at -25% 50%, transparent 75%, rgba(58, 58, 58, 1) 50%)",
+      },
     },
   },
   plugins: [],

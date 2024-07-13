@@ -38,8 +38,10 @@ export const Toogle = () => {
             }`}
           >
             <span
-              className={`dot h-[18px] w-[18px] bg-yellow-500 rounded-full  duration-200 ${
-                activeMode ? "translate-x-6" : ""
+              className={`dot absolute top-1 left-1 h-[18px] w-[18px] rounded-full duration-200 transform ${
+                activeMode
+                  ? "translate-x-6 bg-yellow-500"
+                  : "bg-yellow-500 bg-half-moon"
               }`}
             ></span>
           </span>

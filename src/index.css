@@ -16,6 +16,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body {
+  @apply w-screen text-base h-auto flex flex-wrap justify-center items-start relative left-1/2 -translate-x-1/2 font-[Inter];
+}
 
 body.light {
   @apply bg-white;
@@ -47,11 +50,8 @@ button {
 a {
   @apply font-[Inter] font-medium;
 }
-body {
-  @apply w-screen text-base h-auto flex flex-wrap justify-center items-start relative left-1/2 -translate-x-1/2 font-[Inter];
-}
 
 footer {
-  @apply h-[409px] max-w-[1440px] mt-[135px];
+  @apply h-[409px] max-w-[1440px];
   @apply dark:!bg-custom-dark-footer dark:!max-w-none dark:!w-[100vw];
 }

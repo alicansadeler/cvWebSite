@@ -29,7 +29,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Personal Blog
+              {footerData.text2}
             </a>
             <a
               href="https://github.com/alicansadeler"

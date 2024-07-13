@@ -33,7 +33,7 @@ function App() {
     return <div>Yükleniyor...</div>;
   }
   return (
-    <div className="app-container mt-[25px]">
+    <div className="app-container mt-[25px] h-auto">
       <div className="flex justify-center">
         <div className="app-item2 w-full max-w-screen-lg">
           <div>
@@ -41,7 +41,7 @@ function App() {
             <Header />
           </div>
 
-          <div className="my-0 space-y-10">
+          <div className="my-[80px] space-y-10">
             <Switch>
               <Route path="/profiles">
                 <Profiles />
@@ -50,7 +50,7 @@ function App() {
                 <Projects />
               </Route>
               <Route path="/" exact>
-                <div className="md:my-12 lg:my-32">
+                <div className="md:mb-12 lg:mb-32">
                   <Hero />
                 </div>
 
@@ -70,8 +70,9 @@ function App() {
           </div>
         </div>
       </div>
-
-      <Footer />
+      <div className="mt-[135px]">
+        <Footer />
+      </div>
     </div>
   );
 }
