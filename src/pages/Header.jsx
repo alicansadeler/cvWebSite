@@ -13,20 +13,20 @@ const Header = () => {
       </div>
 
       <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-16 ">
-        <nav className="flex space-x-16">
+        <nav className="flex space-x-16 ">
           <Link
             to="/profiles"
-            className="text-custom-navbartext hover:text-gray-800"
+            className="text-custom-navbartext hover:text-none"
           >
             Skills
           </Link>
           <Link
             to="/projects"
-            className="text-custom-navbartext hover:text-gray-800"
+            className="text-custom-navbartext hover:text-none"
           >
             Projects
           </Link>
-          <Link to="/" className="text-custom-navbartext hover:text-gray-800">
+          <Link to="/" className="text-custom-navbartext hover:text-none">
             Contact
           </Link>
         </nav>

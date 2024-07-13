@@ -1,10 +1,18 @@
 import { useSelector } from "react-redux";
+
 import AcsIMG from "../assets/profilResmi/acs.png";
 import github from "../assets/logo/github.png";
 import linkedn from "../assets/logo/LinkedIn.png";
 
+import darkLink from "../assets/darkmode/LinkedIn.png";
+import darkGit from "../assets/darkmode/github.png";
+import { useEffect } from "react";
+
 const Hero = () => {
   const data = useSelector((store) => store.data);
+  const toggle = useSelector((store) => store.mode);
+
+  useEffect(() => {}, [toggle, data]);
 
   if (data.length === 0 || !data[0] || !data[0][0]) {
     return <div>Yükleniyor...</div>;
@@ -38,7 +46,7 @@ const Hero = () => {
           <div className="text-custom-link text-lg  font-normal flex  items-start flex-wrap">
             <a
               href=""
-              className="text-white px-8 py-2.5 rounded bg-custom-link border-2 border-custom-link mr-3"
+              className="text-white px-8 py-2.5 rounded bg-custom-link border-1 border-custom-link mr-3 dark:bg-custom-dark-personal dark:border-custom-dark-personal dark:!text-custom-dark-footer"
             >
               Hire me{" "}
             </a>
@@ -46,10 +54,10 @@ const Hero = () => {
               href="https://github.com/alicansadeler"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2.5  rounded border-2 border-custom-link mr-3"
+              className="px-3 py-2.5 dark:bg-custom-dark-heroButton rounded border-1 border-custom-link mr-3 dark:border-custom-dark-personal dark:text-custom-dark-personal"
             >
               <img
-                src={github}
+                src={toggle ? github : darkGit}
                 alt="github"
                 className="inline-block mr-2 text-center"
               />
@@ -59,10 +67,10 @@ const Hero = () => {
               href="https://www.linkedin.com/in/acsadeler/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2.5 border-2 border-custom-link rounded"
+              className="px-3 py-2.5 dark:bg-custom-dark-heroButton border-1 border-custom-link rounded dark:border-custom-dark-personal dark:text-custom-dark-personal"
             >
               <img
-                src={linkedn}
+                src={toggle ? linkedn : darkLink}
                 alt="linkedn"
                 className="inline-block mr-2 text-center"
               />

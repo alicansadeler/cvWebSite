@@ -29,6 +29,7 @@ module.exports = {
         "custom-dark-personal": "rgba(225, 225, 255, 1)",
         "custom-dark-github": "rgba(23, 209, 139, 1)",
         "custom-dark-linkedin": "rgba(11, 166, 246, 1)",
+        "custom-dark-heroButton": "rgba(56, 56, 56, 1)",
       },
     },
   },
