@@ -44,12 +44,14 @@ hr {
 button {
   @apply rounded-lg  py-2.5 px-5 text-base font-medium font-[Inter] cursor-pointer bg-white shadow-none border-none appearance-none dark:bg-custom-darkmode !important;
 }
-
+a {
+  @apply font-[Inter] font-medium;
+}
 body {
   @apply w-screen text-base h-auto flex flex-wrap justify-center items-start relative left-1/2 -translate-x-1/2 font-[Inter];
 }
 
 footer {
-  @apply mt-0 h-auto max-w-[1440px];
-  @apply dark:!bg-custom-dark-footer dark:!max-w-none dark:!w-[100vw] mx-10;
+  @apply mt-0 h-[409px] max-w-[1440px];
+  @apply dark:!bg-custom-dark-footer dark:!max-w-none dark:!w-[100vw];
 }

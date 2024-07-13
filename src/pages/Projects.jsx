@@ -29,31 +29,32 @@ export default function Projects() {
               src={resimler[index]}
               alt={proje.title}
             />
-            <div className="py-2">
+            <div className="py-2 ">
               {" "}
               <h3 className="text-2xl font-normal mb-2 text-left text-custom-isim">
                 {proje.title}
               </h3>
-              <p className="text-gray-600  mb-4 text-left text-[14px]">
+              <p className="text-gray-600  mb-4 text-left text-[0.875rem]">
                 {proje.text}
               </p>
-              <div className="flex flex-wrap gap-2 mb-2 ">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {technologies.map((item) => (
                   <span
                     key={item}
-                    className="px-3 py-1 text-[14px] rounded text-custom-isim border-1 border-custom-isim"
+                    className="px-3 py-1 text-[0.875rem] rounded text-custom-isim border-1 border-custom-isim"
                   >
                     {item}
                   </span>
                 ))}
               </div>
-              <div className="flex justify-between">
-                <button className="text-custom-isim underline px-0">
+              <div className="flex justify-between ">
+                <a
+                  href="https://github.com/alicansadeler"
+                  className="text-custom-isim underline px-0"
+                >
                   Github
-                </button>
-                <button className="text-custom-isim underline ">
-                  View Site
-                </button>
+                </a>
+                <a className="text-custom-isim underline ">View Site</a>
               </div>
             </div>
           </div>
