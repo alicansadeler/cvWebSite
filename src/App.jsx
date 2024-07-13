@@ -33,19 +33,22 @@ function App() {
     return <div>Yükleniyor...</div>;
   }
   return (
-    <div className="app-container">
+    <div className="app-container mt-[25px]">
       <div className="flex justify-center">
         <div className="app-item2 w-full max-w-screen-lg">
-          <Toogle />
-          <Header />
-          <Switch>
-            <Route path="/profiles">
-              <Profiles />
-            </Route>
-            <Route path="/projects">
-              <Projects />
-            </Route>
-            <div className="my-0 space-y-10">
+          <div>
+            <Toogle />
+            <Header />
+          </div>
+
+          <div className="my-0 space-y-10">
+            <Switch>
+              <Route path="/profiles">
+                <Profiles />
+              </Route>
+              <Route path="/projects">
+                <Projects />
+              </Route>
               <Route path="/" exact>
                 <div className="md:my-12 lg:my-32">
                   <Hero />
@@ -63,8 +66,8 @@ function App() {
                   <Projects />
                 </div>
               </Route>
-            </div>
-          </Switch>
+            </Switch>
+          </div>
         </div>
       </div>
 

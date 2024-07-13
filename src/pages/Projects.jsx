@@ -47,14 +47,16 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="flex justify-between ">
+              <div className="flex justify-between text-[1rem]">
                 <a
                   href="https://github.com/alicansadeler"
-                  className="text-custom-isim underline px-0"
+                  className="text-custom-isim underline px-0  dark:text-custom-paragraf "
                 >
                   Github
                 </a>
-                <a className="text-custom-isim underline ">View Site</a>
+                <a className="text-custom-isim underline dark:text-custom-paragraf ">
+                  View Site
+                </a>
               </div>
             </div>
           </div>

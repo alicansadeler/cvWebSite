@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="flex flex-col sm:flex-row justify-between items-center px-0 py-2  sm:space-y-0">
+    <header className="flex flex-col sm:flex-row justify-between items-center px-0 py-2  sm:space-y-0 mt-[25px]">
       <div className="flex items-center space-x-2">
         <div className="w-14 h-14 bg-custom-headerdaire rounded-full flex items-center justify-center dark:bg-custom-dark-daire">
           <span
