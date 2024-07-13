@@ -34,6 +34,8 @@ module.exports = {
         "custom-dark-projeTechno": "rgba(143, 136, 255, 1)",
         "custom-dark-daire": "rgba(71, 49, 211, 1)",
         "custom-dark-daireText": "rgba(143, 136, 255, 1)",
+        "custom-dark-toggleSwitch": "rgba(217, 217, 217, 1)",
+        "custom-dark-toggleDeActive": "rgba(58, 58, 58, 1)",
       },
     },
   },

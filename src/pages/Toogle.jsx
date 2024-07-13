@@ -25,17 +25,26 @@ export const Toogle = () => {
   return (
     <>
       <div className="flex items-center justify-end  space-x-6  ">
-        <label className="relative inline-flex items-center cursor-pointer px-0">
+        <label className="px-0 relative inline-flex cursor-pointer select-none items-center ">
           <input
             type="checkbox"
             className="sr-only peer"
             onChange={modeClick}
             checked={activeMode}
           />
-
-          <div className="w-11 h-6  rounded-full  peer-checked:border-custom-purple peer-checked:bg-custom-purple peer-focus:ring-4 peer-focus:ring-custom-purple dark:bg-custom-yellow peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-custom-yellow peer-checked:after:bg-custom-yellow after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600"></div>
+          <span
+            className={`slider mr-3 flex h-[26px] w-[50px] items-center rounded-full p-1 duration-200 ${
+              activeMode ? "bg-custom-purple" : "bg-custom-dark-toggleDeActive"
+            }`}
+          >
+            <span
+              className={`dot h-[18px] w-[18px] bg-yellow-500 rounded-full  duration-200 ${
+                activeMode ? "translate-x-6" : ""
+              }`}
+            ></span>
+          </span>
         </label>
-        <span className="text-custom-toggletext font-semibold text-[15px]">
+        <span className="text-custom-toggletext font-semibold text-[0.938rem] dark:text-custom-dark-toggleSwitch">
           {activeMode ? "DARK MODE" : "LİGHT MODE"}
         </span>
         <span className="text-custom-toggletext">|</span>
@@ -43,15 +52,21 @@ export const Toogle = () => {
           onClick={toggleClick}
           className={`flex items-center  p-0 text-sm `}
         >
-          <span className="text-custom-toggletext font-semibold text-[15px]">
+          <span className="text-custom-toggletext font-semibold text-[0.938rem]">
             {toggle ? (
               <span>
-                SWİTCH TO <span className="text-custom-purple">ENGLISH</span>{" "}
+                SWİTCH TO{" "}
+                <span className="text-custom-purple dark:text-custom-dark-email">
+                  ENGLISH
+                </span>{" "}
               </span>
             ) : (
               <span>
                 {" "}
-                <span className="text-custom-purple">TÜRKÇE</span>'YE GEÇ
+                <span className="text-custom-purple dark:text-custom-dark-email">
+                  TÜRKÇE
+                </span>
+                'YE GEÇ
               </span>
             )}
           </span>
