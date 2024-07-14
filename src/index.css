@@ -16,6 +16,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
 }
 
 body {
@@ -58,6 +59,7 @@ a {
 }
 
 footer {
-  @apply h-[409px] max-w-[1440px];
-  @apply dark:!bg-custom-dark-footer dark:!max-w-none dark:!w-[100vw];
+  @apply md:h-[409px] w-full;
+  @apply sm:h-auto;
+  @apply dark:bg-custom-dark-footer dark:max-w-none dark:w-[100vw];
 }

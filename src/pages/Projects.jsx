@@ -21,11 +21,11 @@ export default function Projects() {
   return (
     <div className="space-y-8 ">
       <h2 className="text-left">{headerData.title2}</h2>
-      <div className="md:flex md:flex-row md:flex-wrap md:justify-between md:w-full sm:flex-col">
+      <div className="md:flex md:flex-row md:flex-wrap md:justify-between md:space-y-0 md:w-full  sm:flex-col sm:space-y-20">
         {projeData.map((proje, index) => (
           <div
             key={index}
-            className="w-full sm:w-1/2 lg:w-[28%]  overflow-hidden  "
+            className="w-full sm:w-[%85] md:w-[28%]  overflow-hidden  "
           >
             <img
               className="w-full h-44 object-cover"

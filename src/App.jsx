@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center ">
+    <div className="min-h-screen flex flex-col items-center shrink px-4 md:px-6">
       <div>
         <div className="md:max-w-6xl mx-auto sm:w-[100vw]">
           <div className=" md:mb-6 sm:mb-0">
@@ -73,7 +73,7 @@ function App() {
             </Switch>
           </div>
         </div>
-        <div className="mt-32">
+        <div className="mt-32 ">
           <Footer />
         </div>
       </div>

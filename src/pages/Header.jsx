@@ -7,7 +7,7 @@ const Header = () => {
   const headerData = data["header"];
 
   return (
-    <header className="flex flex-col  md:justify-between items-center mt-[25px] px-0 pt-2 sm:flex-row sm:space-y-0 sm:justify-center">
+    <header className="flex flex-col  md:px-0 md:justify-between items-center mt-[25px] px-0 pt-2 sm:flex-row sm:space-y-0 sm:justify-center">
       <div className="flex items-center space-x-2 sm:hidden md:block">
         <div className="w-14 h-14 bg-custom-headerdaire rounded-full flex items-center justify-center dark:bg-custom-dark-daire ">
           <span
