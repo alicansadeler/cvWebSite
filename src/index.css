@@ -61,7 +61,3 @@ footer {
   @apply h-[409px] max-w-[1440px];
   @apply dark:!bg-custom-dark-footer dark:!max-w-none dark:!w-[100vw];
 }
-
-.app-container {
-  @apply sm:w-11/12 sm:shrink sm:flex-col sm:items-center md:w-full;
-}

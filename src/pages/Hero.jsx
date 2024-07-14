@@ -21,15 +21,15 @@ const Hero = () => {
   const heroData = data[0][0].hero;
 
   return (
-    <div className="space-y-8 ">
+    <div className="space-y-8 md:text-left sm:text-left">
       <div className="flex items-center  h-[45px] py-0">
-        <hr className="w-[6vw]   border-custom-isim bg-custom-isim" />
-        <span className="px-3  text-custom-link font-semibold dark:text-custom-dark-h3">
+        <hr className="w-[6vw]   border-custom-isim bg-custom-isim sm:hidden md:block" />
+        <span className="px-3  text-custom-link font-semibold dark:text-custom-dark-h3 sm:hidden md:block">
           Ali Can Sadeler
         </span>
       </div>
-      <section className="flex flex-wrap-reverse justify-between w-full sm:flex sm:flex-row sm:items-center">
-        <div className="font-bold drop-shadow-xl  lg:text-left  w-[37.25rem] ">
+      <section className="md:flex md:flex-wrap-reverse md:justify-between md:w-full  sm:flex sm:flex-wrap-reverse sm:justify-center">
+        <div className="font-bold drop-shadow-xl  md:text-left  w-[37.25rem] ">
           <h1>
             <span className="inline-block dark:text-custom-title">
               {heroData.title1}
@@ -40,7 +40,7 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="text-[1.125rem] font-normal drop-shadow-none leading-7 my-14 sm:text-left lg:text-left">
+          <p className="text-[1.125rem] font-normal drop-shadow-none leading-7 my-14 sm:text-left md:text-left">
             {heroData.text}
           </p>
           <div className="text-custom-link text-[1.125rem]  font-normal flex  items-start flex-wrap">
@@ -82,7 +82,7 @@ const Hero = () => {
         <img
           src={AcsIMG}
           alt="Profil Resmi"
-          className="xl:w-[29.75rem] xl:h-[23.45rem] md:w-[29.75rem] md:h-[23.45rem] shadow-2xl md:rounded-2xl sm:rounded-none border-1 border-black self-end"
+          className="xl:w-[29.75rem] xl:h-[23.45rem] md:w-[29.75rem] md:h-[23.45rem]  shadow-2xl md:rounded-2xl sm:rounded-none border-1 border-black self-end"
         />
       </section>
     </div>

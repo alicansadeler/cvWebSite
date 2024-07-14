@@ -38,14 +38,14 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col items-center ">
-      <div className="flex-grow px-4 sm:px-6 lg:px-8">
+      <div>
         <div className="md:max-w-6xl mx-auto sm:w-[100vw]">
-          <div className="app-container mb-6">
+          <div className=" md:mb-6 sm:mb-0">
             <Toogle />
             <Header />
           </div>
 
-          <div className="my-8 space-y-10">
+          <div className="md:my-8 space-y-10 sm:my-0">
             <Switch>
               <Route path="/profiles">
                 <Profiles />
@@ -54,7 +54,7 @@ function App() {
                 <Projects />
               </Route>
               <Route path="/" exact>
-                <div className="mb-12 lg:mb-32">
+                <div className="mb-12 md:mb-32">
                   <Hero />
                 </div>
 
