@@ -40,10 +40,10 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="text-lg font-normal drop-shadow-none leading-7 my-14 sm:text-left lg:text-left">
+          <p className="text-[1.125rem] font-normal drop-shadow-none leading-7 my-14 sm:text-left lg:text-left">
             {heroData.text}
           </p>
-          <div className="text-custom-link text-lg  font-normal flex  items-start flex-wrap">
+          <div className="text-custom-link text-[1.125rem]  font-normal flex  items-start flex-wrap">
             <a
               href=""
               className="text-white px-8 py-2.5 rounded bg-custom-link border-1 border-custom-link mr-3 dark:bg-custom-dark-personal dark:border-custom-dark-personal dark:!text-custom-dark-footer"

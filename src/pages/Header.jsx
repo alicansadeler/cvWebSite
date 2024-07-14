@@ -8,11 +8,11 @@ const Header = () => {
 
   return (
     <header className="flex flex-col sm:flex-row justify-between items-center px-0 py-2  sm:space-y-0 mt-[25px]">
-      <div className="flex items-center space-x-2">
-        <div className="w-14 h-14 bg-custom-headerdaire rounded-full flex items-center justify-center dark:bg-custom-dark-daire">
+      <div className="flex items-center space-x-2 sm:hidden md:block">
+        <div className="w-14 h-14 bg-custom-headerdaire rounded-full flex items-center justify-center dark:bg-custom-dark-daire ">
           <span
-            className="text-custom-daire font-semibold text-xl rotate-[25deg]
-            dark:text-custom-dark-daireText
+            className="text-custom-daire font-semibold text-[1.5rem] rotate-[25deg]
+            dark:text-custom-dark-daireText 
           "
           >
             A

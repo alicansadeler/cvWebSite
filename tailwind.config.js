@@ -42,6 +42,10 @@ module.exports = {
         "half-moon":
           "radial-gradient(circle at -25% 50%, transparent 75%, rgba(58, 58, 58, 1) 50%)",
       },
+
+      screens: {
+        sm: "400px",
+      },
     },
   },
   plugins: [],

@@ -11,9 +11,7 @@ export const Profile = () => {
 
   return (
     <div className="space-y-8">
-      <h2 className="text-5xl font-semibold text-left  py-0">
-        {profileData.title1}
-      </h2>
+      <h2 className=" font-semibold text-left  py-0">{profileData.title1}</h2>
       <div className="md:flex  md:flex-row md:justify-between sm:flex-col">
         <div className="space-y-8 text-left">
           <h3>{profileData.title1}</h3>

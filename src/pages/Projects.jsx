@@ -34,7 +34,7 @@ export default function Projects() {
             />
             <div className="py-2 ">
               {" "}
-              <h3 className="text-[1.875rem]  font-normal mb-2 text-left text-custom-isim dark:text-custom-dark-projeTitle">
+              <h3 className="font-normal mb-2 text-left text-custom-isim dark:text-custom-dark-projeTitle">
                 {proje.title}
               </h3>
               <p className="text-gray-600  mb-4 text-left text-[0.875rem]">

@@ -21,7 +21,7 @@ export const Skills = () => {
   });
   return (
     <div className="space-y-8">
-      <h2 className="text-5xl font-semibold">{headerData.title1}</h2>
+      <h2 className="font-semibold">{headerData.title1}</h2>
       <div className="flex flex-wrap ">{skills}</div>
     </div>
   );
