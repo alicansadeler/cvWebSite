@@ -19,7 +19,7 @@
 }
 
 body {
-  @apply w-full min-h-screen text-base font-[Inter] overflow-x-hidden m-0 p-0 sm:text-[12px] md:text-[16px];
+  @apply w-full min-h-screen text-base font-[Inter] overflow-x-hidden m-0 p-0  md:text-[16px];
 }
 
 body.light {
@@ -34,12 +34,16 @@ p {
   @apply text-custom-metin font-[Inter] font-normal dark:text-custom-paragraf;
 }
 
-h3 {
-  @apply text-custom-isim text-[1.875rem] dark:text-custom-dark-h3;
+h1 {
+  @apply sm:text-[3rem]  md:text-[4.5rem];
 }
 
 h2 {
   @apply text-[3rem] font-semibold dark:text-custom-title;
+}
+
+h3 {
+  @apply text-custom-isim text-[1.875rem] dark:text-custom-dark-h3;
 }
 
 hr {

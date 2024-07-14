@@ -30,7 +30,7 @@ const Hero = () => {
       </div>
       <section className="flex flex-wrap-reverse justify-between w-full sm:flex sm:flex-row sm:items-center">
         <div className="font-bold drop-shadow-xl  lg:text-left  w-[37.25rem] ">
-          <h1 className="text-[4.5rem]">
+          <h1>
             <span className="inline-block dark:text-custom-title">
               {heroData.title1}
             </span>
