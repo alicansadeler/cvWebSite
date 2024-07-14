@@ -24,8 +24,8 @@ export const Toogle = () => {
   }, [activeMode]);
   return (
     <>
-      <div className="flex items-center justify-end  space-x-6  ">
-        <label className="px-0 relative inline-flex cursor-pointer select-none items-center ">
+      <div className="md:flex md:items-center md:justify-end  space-x-6  mt-4 ">
+        <label className="px-0 relative inline-flex cursor-pointer select-none items-end ">
           <input
             type="checkbox"
             className="sr-only peer"

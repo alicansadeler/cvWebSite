@@ -21,7 +21,7 @@ const Hero = () => {
   const heroData = data[0][0].hero;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 ">
       <div className="flex items-center  h-[45px] py-0">
         <hr className="w-[6vw]   border-custom-isim bg-custom-isim" />
         <span className="px-3  text-custom-link font-semibold dark:text-custom-dark-h3">
@@ -40,7 +40,7 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="text-lg font-normal drop-shadow-none leading-7 my-14 sm:text-center lg:text-left">
+          <p className="text-lg font-normal drop-shadow-none leading-7 my-14 sm:text-left lg:text-left">
             {heroData.text}
           </p>
           <div className="text-custom-link text-lg  font-normal flex  items-start flex-wrap">

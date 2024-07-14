@@ -1,5 +1,4 @@
-import { Route } from "react-router-dom";
-import { Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { getDataEuAPI, getDataTrAPI } from "./store/actions/action";
 import { useEffect } from "react";
 import { Toogle } from "./pages/Toogle.jsx";
@@ -30,18 +29,23 @@ function App() {
   }, [dispatch, toggle]);
 
   if (loading) {
-    return <div>Yükleniyor...</div>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        Yükleniyor...
+      </div>
+    );
   }
+
   return (
-    <div className="app-container mt-[25px] h-auto">
-      <div className="flex justify-center">
-        <div className="app-item2 w-full max-w-screen-lg">
-          <div>
+    <div className="min-h-screen flex flex-col items-center ">
+      <div className="flex-grow px-4 sm:px-6 lg:px-8">
+        <div className="md:max-w-6xl mx-auto sm:w-[100vw]">
+          <div className="app-container mb-6">
             <Toogle />
             <Header />
           </div>
 
-          <div className="my-[80px] space-y-10">
+          <div className="my-8 space-y-10">
             <Switch>
               <Route path="/profiles">
                 <Profiles />
@@ -50,28 +54,28 @@ function App() {
                 <Projects />
               </Route>
               <Route path="/" exact>
-                <div className="md:mb-12 lg:mb-32">
+                <div className="mb-12 lg:mb-32">
                   <Hero />
                 </div>
 
-                <div className="md:my-8 lg:my-8">
+                <div className="my-8">
                   <Skills />
                 </div>
-                <hr />
-                <div className="md:my-8 lg:my-8">
+                <hr className="my-8" />
+                <div className="my-8">
                   <Profile />
                 </div>
-                <hr />
-                <div className="md:my-8 lg:my-8">
+                <hr className="my-8" />
+                <div className="my-8">
                   <Projects />
                 </div>
               </Route>
             </Switch>
           </div>
         </div>
-      </div>
-      <div className="mt-[135px]">
-        <Footer />
+        <div className="mt-32">
+          <Footer />
+        </div>
       </div>
     </div>
   );

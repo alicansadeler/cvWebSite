@@ -19,11 +19,14 @@ export default function Projects() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 ">
       <h2 className="text-left">{headerData.title2}</h2>
-      <div className="flex flex-wrap justify-between w-full">
+      <div className="md:flex md:flex-row md:flex-wrap md:justify-between md:w-full sm:flex-col">
         {projeData.map((proje, index) => (
-          <div key={index} className="max-w-sm   overflow-hidden w-80 ">
+          <div
+            key={index}
+            className="w-full sm:w-1/2 lg:w-[28%]  overflow-hidden  "
+          >
             <img
               className="w-full h-44 object-cover"
               src={resimler[index]}
