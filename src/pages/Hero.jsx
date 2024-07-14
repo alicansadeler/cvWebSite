@@ -46,7 +46,7 @@ const Hero = () => {
           <div className="text-custom-link text-[1.125rem]  font-normal flex  items-start flex-wrap">
             <a
               href=""
-              className="text-white px-8 py-2.5 rounded bg-custom-link border-1 border-custom-link mr-3 dark:bg-custom-dark-personal dark:border-custom-dark-personal dark:!text-custom-dark-footer"
+              className="text-white px-8 py-2.5 sm:hidden md:block rounded bg-custom-link border-1 border-custom-link mr-3 dark:bg-custom-dark-personal dark:border-custom-dark-personal dark:!text-custom-dark-footer"
             >
               Hire me{" "}
             </a>
@@ -54,20 +54,20 @@ const Hero = () => {
               href="https://github.com/alicansadeler"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2.5 dark:bg-custom-dark-heroButton rounded border-1 border-custom-link mr-3 dark:border-custom-dark-personal dark:text-custom-dark-personal"
+              className="px-3 py-[8px] dark:bg-custom-dark-heroButton rounded border-1 border-custom-link mr-3 dark:border-custom-dark-personal dark:text-custom-dark-personal"
             >
               <img
                 src={toggle ? github : darkGit}
                 alt="github"
                 className="inline-block mr-2 text-center"
-              />
+              />{" "}
               Github
             </a>
             <a
               href="https://www.linkedin.com/in/acsadeler/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2.5 dark:bg-custom-dark-heroButton border-1 border-custom-link rounded dark:border-custom-dark-personal dark:text-custom-dark-personal"
+              className="px-3 py-[9px] dark:bg-custom-dark-heroButton border-1 border-custom-link rounded dark:border-custom-dark-personal dark:text-custom-dark-personal"
             >
               <img
                 src={toggle ? linkedn : darkLink}
@@ -82,7 +82,7 @@ const Hero = () => {
         <img
           src={AcsIMG}
           alt="Profil Resmi"
-          className="xl:w-[29.75rem] xl:h-[23.45rem] md:w-[29.75rem] md:h-[23.45rem] shadow-2xl rounded-2xl border-1 border-black self-end"
+          className="xl:w-[29.75rem] xl:h-[23.45rem] md:w-[29.75rem] md:h-[23.45rem] shadow-2xl md:rounded-2xl sm:rounded-none border-1 border-black self-end"
         />
       </section>
     </div>

@@ -12,10 +12,10 @@ export const Profile = () => {
   return (
     <div className="space-y-8">
       <h2 className=" font-semibold text-left  py-0">{profileData.title1}</h2>
-      <div className="md:flex  md:flex-row md:justify-between sm:flex-col">
+      <div className="md:flex gap-2 md:flex-row md:justify-between sm:flex-col">
         <div className="space-y-8 text-left">
           <h3>{profileData.title1}</h3>
-          <ul className="flex flex-col w-full max-w-2xl dark:text-custom-paragraf">
+          <ul className="flex flex-col w-full min-w-[450px] dark:text-custom-paragraf">
             {Object.entries(profileData.items[0].details).map(
               ([key, value]) => (
                 <li key={key} className="flex mb-0">
@@ -30,7 +30,7 @@ export const Profile = () => {
             )}
           </ul>
         </div>
-        <div className="space-y-8 w-[580px] text-left">
+        <div className="space-y-8 w:full max:w-[500px] text-left">
           <h3>{profileData.title2}</h3>
           <p>{profileData.items[1].text}</p>
         </div>

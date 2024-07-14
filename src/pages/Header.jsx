@@ -7,7 +7,7 @@ const Header = () => {
   const headerData = data["header"];
 
   return (
-    <header className="flex flex-col sm:flex-row justify-between items-center px-0 py-2  sm:space-y-0 mt-[25px]">
+    <header className="flex flex-col  md:justify-between items-center mt-[25px] px-0 py-2 sm:flex-row sm:space-y-0 sm:justify-around">
       <div className="flex items-center space-x-2 sm:hidden md:block">
         <div className="w-14 h-14 bg-custom-headerdaire rounded-full flex items-center justify-center dark:bg-custom-dark-daire ">
           <span
@@ -20,8 +20,8 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-16 ">
-        <nav className="flex space-x-16 ">
+      <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 md:space-x-16 sm:space-x-8">
+        <nav className="flex md:space-x-16 sm:space-x-8">
           <Link
             to="/profiles"
             className="text-custom-navbartext hover:text-none"
@@ -39,7 +39,7 @@ const Header = () => {
           </Link>
         </nav>
         <Link
-          className="px-4 py-2 text-custom-link border-1  border-custom-link rounded-md hover:text-custom-link  w-full sm:w-auto text-center dark:bg-custom-paragraf"
+          className="md:px-4 md:py-2 sm:px-2 sm:py-1 text-custom-link border-1  border-custom-link rounded-md hover:text-custom-link  w-full sm:w-auto text-center dark:bg-custom-paragraf"
           to="/"
         >
           Hire me

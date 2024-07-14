@@ -12,17 +12,22 @@ export const Skills = () => {
   const skills = skillData.map((skill, index) => {
     return (
       <div className="px-0">
-        <div className="space-y-8 w-full max-w-[300px] gap-10" key={index}>
-          <h3>{skill.title}</h3>
+        <div
+          className="md:space-y-8 sm:space-y-8 md:w-full md:max-w-[300px] gap-10"
+          key={index}
+        >
+          <h3 className="sm:space-y-8">{skill.title}</h3>
           <p>{skill.text}</p>
         </div>
       </div>
     );
   });
   return (
-    <div className="space-y-8 ">
-      <h2 className="font-semibold">{headerData.title1}</h2>
-      <div className="flex flex-wrap justify-between">{skills}</div>
+    <div className="md:space-y-8 sm:space-y-8">
+      <h2 className="font-semibold ">{headerData.title1}</h2>
+      <div className="flex flex-wrap justify-between sm:space-y-8 md:space-y-0">
+        {skills}
+      </div>
     </div>
   );
 };
