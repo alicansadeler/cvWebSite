@@ -1,12 +1,5 @@
 import { ACT_LANG, GET_EU, GET_MODE, GET_TR } from "../actions/action";
 
-const result = () => {
-  if (JSON.parse(localStorage.getItem("active")) === null) {
-    return false;
-  } else {
-    return true;
-  }
-};
 const darkMode = () => {
   if (JSON.parse(localStorage.getItem("mode"))) {
     return true;
@@ -17,7 +10,7 @@ const darkMode = () => {
 
 const initialState = {
   data: [],
-  active: result(),
+  active: JSON.parse(localStorage.getItem("active")) || false,
   loading: true,
   mode: darkMode(),
 };
