@@ -1,12 +1,21 @@
-export const REQ_TYPES = Object.freeze({
-  GET: "GET",
-  POST: "POST",
-  PUT: "PUT",
-  DELETE: "DELETE",
+import axios from "axios";
+
+export const reqTypes = Object.freeze({
+  POST: "post",
+  GET: "get",
+  PUT: "put",
+  DELETE: "delete",
 });
 
-const instance = axios.create({
-  baseURL: "https://668bdc690b61b8d23b0b7836.mockapi.io/acs/",
-});
+function createInstance() {
+  const token = localStorage.getItem("token");
 
-export const API = instance();
+  return axios.create({
+    baseURL: "https://reqres.in/api",
+    headers: {
+      authorization: token,
+    },
+  });
+}
+
+export const API = createInstance();

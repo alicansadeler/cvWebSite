@@ -1,13 +1,14 @@
 import { PhoneInput } from "react-international-phone";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
 
 import contact from "../assets/contact/contact.png";
 
 import "react-international-phone/style.css";
-import axios from "axios";
+import { useAxios } from "../hooks/useAxios";
+import { reqTypes } from "../api/api";
 
 const Contact = () => {
+  const [data, isLoading, error, postMessage] = useAxios([]);
   const initialState = {
     isim: "",
     surname: "",
@@ -36,18 +37,10 @@ const Contact = () => {
     setValue("phone", value, { shouldValidate: true });
   };
 
-  const myHandleSubmit = (formData) => {
-    axios
-      .post("https://reqres.in/api/users?page=2", formData)
-      .then(function (response) {
-        toast.success("The form has been sent successfully.", {
-          autoClose: 2500,
-        });
-        reset(initialState);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+  const myHandleSubmit = (data) => {
+    postMessage(reqTypes.POST, "/users", data);
+    console.log("form message >", data);
+    reset(initialState);
   };
 
   return (
