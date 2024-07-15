@@ -25,7 +25,7 @@ export const Toogle = () => {
   return (
     <>
       <div className="md:flex md:items-center md:justify-end  md:space-x-6  md:mt-4 sm:mt-4 sm:justify-center  sm:flex sm:space-x-6">
-        <label className="px-0 relative inline-flex cursor-pointer select-none items-end">
+        <label className="px-0 relative inline-flex cursor-pointer select-none items-center">
           <input
             type="checkbox"
             className="sr-only peer"
@@ -33,19 +33,18 @@ export const Toogle = () => {
             checked={activeMode}
           />
           <span
-            className={`slider mr-2 flex h-[20px] w-[40px] items-center rounded-full p-1 duration-200 ${
+            className={`slider flex h-5 w-9 items-center rounded-full p-0.5 duration-200 ${
               activeMode ? "bg-custom-purple" : "bg-custom-dark-toggleDeActive"
             }`}
           >
             <span
-              className={`dot absolute md:top-[2px] sm:top-[5.8px] left-[2px] h-[16px] w-[16px] rounded-full duration-200 transform ${
-                activeMode
-                  ? "translate-x-5 bg-yellow-500"
-                  : "bg-yellow-500 bg-half-moon"
-              }`}
+              className={`dot h-4 w-4 rounded-full bg-yellow-500 duration-200 transform ${
+                activeMode ? "translate-x-4" : ""
+              } ${!activeMode ? "bg-half-moon" : ""}`}
             ></span>
           </span>
         </label>
+
         <span className="text-custom-toggletext font-semibold text-[0.938rem] dark:text-custom-dark-toggleSwitch">
           {activeMode ? "DARK MODE" : "LİGHT MODE"}
         </span>
