@@ -34,7 +34,10 @@ const Header = () => {
           >
             {headerData.title2}
           </Link>
-          <Link to="/" className="text-custom-navbartext hover:text-none">
+          <Link
+            to="/contact"
+            className="text-custom-navbartext hover:text-none"
+          >
             {headerData.title3}
           </Link>
         </nav>

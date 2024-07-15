@@ -5,7 +5,7 @@ import { Toogle } from "./pages/Toogle.jsx";
 import { Skills } from "./components/Skills.jsx";
 import { Profile } from "./components/Profile.jsx";
 import { useDispatch, useSelector } from "react-redux";
-
+import Contact from "./pages/Contact.jsx";
 import Hero from "./pages/Hero.jsx";
 import Profiles from "./pages/Profiles.jsx";
 import Projects from "./pages/Projects.jsx";
@@ -49,6 +49,9 @@ function App() {
             <Switch>
               <Route path="/profiles">
                 <Profiles />
+              </Route>
+              <Route path="/contact">
+                <Contact />
               </Route>
               <Route path="/projects">
                 <Projects />

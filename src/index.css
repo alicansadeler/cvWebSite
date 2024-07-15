@@ -52,7 +52,7 @@ hr {
 }
 
 button {
-  @apply rounded-lg  py-2.5 px-5 text-base font-medium font-[Inter] cursor-pointer bg-white shadow-none border-none appearance-none dark:bg-custom-darkmode !important;
+  @apply rounded-lg  py-2.5 px-5 text-base font-medium font-[Inter] cursor-pointer  shadow-none  appearance-none dark:bg-custom-darkmode !important;
 }
 a {
   @apply font-[Inter] font-medium;
