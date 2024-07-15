@@ -5,6 +5,8 @@ import { Toogle } from "./pages/Toogle.jsx";
 import { Skills } from "./components/Skills.jsx";
 import { Profile } from "./components/Profile.jsx";
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer } from "react-toastify";
+
 import Contact from "./pages/Contact.jsx";
 import Hero from "./pages/Hero.jsx";
 import Profiles from "./pages/Profiles.jsx";
@@ -13,6 +15,7 @@ import Header from "./pages/Header.jsx";
 import Footer from "./pages/Footer.jsx";
 
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -38,6 +41,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col items-center shrink px-4 md:px-6">
+      <ToastContainer />
       <div>
         <div className="md:max-w-6xl mx-auto sm:w-[100vw]">
           <div className=" md:mb-6 sm:mb-0">

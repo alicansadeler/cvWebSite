@@ -1,46 +1,108 @@
 import { PhoneInput } from "react-international-phone";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+
 import contact from "../assets/contact/contact.png";
 
 import "react-international-phone/style.css";
+import axios from "axios";
 
 const Contact = () => {
+  const initialState = {
+    isim: "",
+    surname: "",
+    phone: "",
+    textarea: "",
+  };
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    setValue,
+    formState: { errors, isValid },
+  } = useForm({
+    defaultValues: initialState,
+    mode: "onChange",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValue(name, value);
+  };
+
+  const handlePhoneChange = (value) => {
+    setValue("phone", value, { shouldValidate: true });
+  };
+
+  const myHandleSubmit = (formData) => {
+    axios
+      .post("https://reqres.in/api/users?page=2", formData)
+      .then(function (response) {
+        toast.success("The form has been sent successfully.", {
+          autoClose: 2500,
+        });
+        reset(initialState);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="flex justify-center">
       <div className=" md:w-[700px] sm:hidden md:block absolute ">
         <img src={contact} alt="contact" />
       </div>
       <div className="flex relative justify-between ">
-        <form className="mb-6  mt-20">
-          <label
-            for="success"
-            className="block mb-2 text-sm font-medium s text-custom-daire dark:text-custom-daire"
-          >
+        <form className="mb-6  mt-20" onSubmit={handleSubmit(myHandleSubmit)}>
+          <label className="block mb-2 text-sm font-medium s text-custom-daire dark:text-custom-daire">
             Your name
             <input
+              name="isim"
+              value={watch("isim")}
               type="text"
-              id="success"
               className="bg-custom-headerdaire  border-2  border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
               placeholder="Your name"
+              onChange={handleChange}
+              {...register("isim", {
+                required: true,
+                minLength: {
+                  value: 3,
+                  message: "Must be at least three characters",
+                },
+              })}
             />
+            {errors.isim && <p>{errors.isim.message}</p>}
           </label>
 
-          <label
-            for="success"
-            className="block mb-2 text-sm font-medium text-custom-daire dark:text-custom-daire"
-          >
+          <label className="block mb-2 text-sm font-medium text-custom-daire dark:text-custom-daire">
             Your surname
             <input
+              name="surname"
               type="text"
-              id="success"
               className="bg-custom-headerdaire  border-2  border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
               placeholder="Your surname"
+              value={watch("surname")}
+              onChange={handleChange}
+              {...register("surname", {
+                required: true,
+                minLength: {
+                  value: 3,
+                  message: "Must be at least three characters",
+                },
+              })}
             />
+            {errors.surname && <p>{errors.surname.message}</p>}
           </label>
           <label className="block text-sm font-medium text-custom-daire dark:text-custom-daire">
             Your Phone
           </label>
           <PhoneInput
             placeholder="Enter phone number"
+            value={watch("phone")}
+            onChange={handlePhoneChange}
             defaultCountry="tr"
             inputStyle={{
               backgroundColor: "rgba(238, 235, 255, 1)",
@@ -49,25 +111,33 @@ const Contact = () => {
             }}
             className="bg-custom-headerdaire  border-2 border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
           />
+          {errors.phone && <p>{errors.phone.message}</p>}
 
-          <label
-            for="success"
-            className="block mb-2 text-sm mt-0 font-medium text-custom-daire dark:text-custom-daire"
-          >
+          <label className="block mb-2 text-sm mt-0 font-medium text-custom-daire dark:text-custom-daire">
             Your message
             <textarea
+              name="textarea"
               type="textarea"
-              id="success"
+              value={watch("textarea")}
+              onChange={handleChange}
               className="bg-custom-headerdaire  border-2 h-[200px] border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
               placeholder="Your message"
+              {...register("textarea", {
+                required: true,
+                minLength: {
+                  value: 3,
+                  message: "Must be at least three characters",
+                },
+              })}
             />
+            {errors.textarea && <p>{errors.textarea.message}</p>}
           </label>
           <button
-            type="submit"
             className="mt-4 w-full bg-custom-daire hover:bg-custom-headerdaire text-custom-headerdaire hover:text-custom-daire 
               py-2 px-4 border-2 border-custom-daire 
              rounded-lg transition duration-300 ease-in-out 
              focus:outline-none focus:ring-2 focus:ring-custom-daire focus:ring-opacity-50"
+            disabled={!isValid}
           >
             Send Message
           </button>
