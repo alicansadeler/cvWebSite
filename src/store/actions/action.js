@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { toast } from "react-toastify";
 export const GET_TR = "TR DATA GETIR";
 export const GET_EU = "EU DATA GETIR";
 export const ACT_LANG = "DATA DIL TERCIHI";
@@ -28,36 +28,61 @@ export const actLang = () => {
 
 export const getDataTrAPI = () => (dispatch) => {
   dispatch(setLoading(true));
-  axios
-    .get("https://668bdc690b61b8d23b0b7836.mockapi.io/acs/activetr")
-    .then(function (response) {
-      if (response.status === 200) {
-        dispatch(getDataTR(response.data));
-      }
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error.message);
-    })
-    .finally(function () {
-      // always executed
-    });
+  toast.info("Yükleniyor...", {
+    position: "top-center",
+    autoClose: 500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+  setTimeout(() => {
+    axios
+      .get("https://668bdc690b61b8d23b0b7836.mockapi.io/acs/activetr")
+      .then(function (response) {
+        if (response.status === 200) {
+          dispatch(getDataEU(response.data));
+        }
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error.message);
+      })
+      .finally(function () {
+        // always executed
+      });
+  }, 600);
 };
 
 export const getDataEuAPI = () => (dispatch) => {
   dispatch(setLoading(true));
-  axios
-    .get("https://668bdc690b61b8d23b0b7836.mockapi.io/acs/activeeu")
-    .then(function (response) {
-      if (response.status === 200) {
-        dispatch(getDataEU(response.data));
-      }
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error.message);
-    })
-    .finally(function () {
-      // always executed
-    });
+  toast.info("Loading...", {
+    position: "top-center",
+    autoClose: 500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+
+  setTimeout(() => {
+    axios
+      .get("https://668bdc690b61b8d23b0b7836.mockapi.io/acs/activeeu")
+      .then(function (response) {
+        if (response.status === 200) {
+          dispatch(getDataEU(response.data));
+        }
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error.message);
+      })
+      .finally(function () {
+        // always executed
+      });
+  }, 600);
 };

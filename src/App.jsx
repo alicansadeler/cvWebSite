@@ -5,7 +5,7 @@ import { Toogle } from "./pages/Toogle.jsx";
 import { Skills } from "./components/Skills.jsx";
 import { Profile } from "./components/Profile.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 import Contact from "./pages/Contact.jsx";
 import Hero from "./pages/Hero.jsx";
@@ -31,13 +31,7 @@ function App() {
     }
   }, [dispatch, toggle]);
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        Yükleniyor...
-      </div>
-    );
-  }
+  if (loading) return;
 
   return (
     <div className="min-h-screen flex flex-col items-center shrink px-4 md:px-6">
