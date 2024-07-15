@@ -1,14 +1,16 @@
 import { PhoneInput } from "react-international-phone";
 import { useForm } from "react-hook-form";
-
+import { useAxios } from "../hooks/useAxios";
+import { reqTypes } from "../api/api";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import contact from "../assets/contact/contact.png";
 
 import "react-international-phone/style.css";
-import { useAxios } from "../hooks/useAxios";
-import { reqTypes } from "../api/api";
 
 const Contact = () => {
   const [data, isLoading, error, postMessage] = useAxios([]);
+  const emailRef = useRef();
   const initialState = {
     isim: "",
     surname: "",
@@ -37,9 +39,27 @@ const Contact = () => {
     setValue("phone", value, { shouldValidate: true });
   };
 
-  const myHandleSubmit = (data) => {
-    postMessage(reqTypes.POST, "/users", data);
-    console.log("form message >", data);
+  const myHandleSubmit = (formData) => {
+    postMessage(reqTypes.POST, "/users", formData);
+    console.log("form message >", formData);
+
+    emailjs
+      .sendForm(
+        "service_ds43nbs",
+        "template_u3at45q",
+        emailRef.current, // Form referansı
+
+        "medX0XRjILOWCrjwd"
+      )
+      .then(
+        (result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
     reset(initialState);
   };
 
@@ -49,7 +69,11 @@ const Contact = () => {
         <img src={contact} alt="contact" />
       </div>
       <div className="flex relative justify-between ">
-        <form className="mb-6  mt-20" onSubmit={handleSubmit(myHandleSubmit)}>
+        <form
+          className="mb-6  mt-20"
+          onSubmit={handleSubmit(myHandleSubmit)}
+          ref={emailRef}
+        >
           <label className="block mb-2 text-sm font-medium s text-custom-daire dark:text-custom-daire">
             Your name
             <input
