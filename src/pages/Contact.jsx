@@ -14,6 +14,7 @@ const Contact = () => {
   const initialState = {
     isim: "",
     surname: "",
+    email: "",
     phone: "",
     textarea: "",
   };
@@ -99,34 +100,46 @@ const Contact = () => {
             />
             {errors.surname && <p>{errors.surname.message}</p>}
           </label>
+          <label className="block mb-2 text-sm font-medium text-custom-daire dark:text-custom-daire">
+            Your email
+            <input
+              name="email"
+              type="text"
+              className="bg-custom-headerdaire  border-2  border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
+              placeholder="Your email"
+              {...register("email", {
+                required: true,
+                pattern: {
+                  value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/gm,
+                  message: "Please enter a valid email address",
+                },
+              })}
+            />
+            {errors.email && <p>{errors.email.message}</p>}
+          </label>
           <label className="block text-sm font-medium text-custom-daire dark:text-custom-daire">
             Your Phone
           </label>
-          <Controller
+
+          <PhoneInput
             name="phone"
-            control={control}
-            rules={{
-              required: "Phone number is required",
-              minLength: {
-                value: 10,
-                message: "Phone number must be at least 10 digits",
-              },
+            placeholder="Enter phone number"
+            defaultCountry="tr"
+            inputStyle={{
+              backgroundColor: "rgba(238, 235, 255, 1)",
+              color: "rgba(107, 114, 128, 1)",
+              fontWeight: "bold",
             }}
-            render={({ field: { onChange, value } }) => (
-              <PhoneInput
-                value={value}
-                onChange={onChange}
-                placeholder="Enter phone number"
-                defaultCountry="tr"
-                inputStyle={{
-                  backgroundColor: "rgba(238, 235, 255, 1)",
-                  color: "rgba(107, 114, 128, 1)",
-                  fontWeight: "bold",
-                }}
-                className="bg-custom-headerdaire border-2 border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
-              />
-            )}
+            className="bg-custom-headerdaire border-2 border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
+            {...register("phone", {
+              required: true,
+              minLength: {
+                value: 11,
+                message: "Must be at least 10 characters",
+              },
+            })}
           />
+
           {errors.phone && errors.phone.message && (
             <p>{errors.phone.message}</p>
           )}
