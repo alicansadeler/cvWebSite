@@ -1,5 +1,5 @@
 import { PhoneInput } from "react-international-phone";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { useAxios } from "../hooks/useAxios";
 import { reqTypes } from "../api/api";
 import { useRef } from "react";
@@ -21,6 +21,7 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
+    control,
     reset,
     formState: { errors, isValid },
   } = useForm({
@@ -101,22 +102,30 @@ const Contact = () => {
           <label className="block text-sm font-medium text-custom-daire dark:text-custom-daire">
             Your Phone
           </label>
-          <PhoneInput
-            placeholder="Enter phone number"
-            defaultCountry="tr"
-            inputStyle={{
-              backgroundColor: "rgba(238, 235, 255, 1)",
-              color: "rgba(107, 114, 128, 1)",
-              fontWeight: "bold",
-            }}
-            className="bg-custom-headerdaire  border-2 border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
-            {...register("phone", {
-              required: true,
+          <Controller
+            name="phone"
+            control={control}
+            rules={{
+              required: "Phone number is required",
               minLength: {
-                value: 11,
-                message: "Must be at least ten characters",
+                value: 10,
+                message: "Phone number must be at least 10 digits",
               },
-            })}
+            }}
+            render={({ field: { onChange, value } }) => (
+              <PhoneInput
+                value={value}
+                onChange={onChange}
+                placeholder="Enter phone number"
+                defaultCountry="tr"
+                inputStyle={{
+                  backgroundColor: "rgba(238, 235, 255, 1)",
+                  color: "rgba(107, 114, 128, 1)",
+                  fontWeight: "bold",
+                }}
+                className="bg-custom-headerdaire border-2 border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
+              />
+            )}
           />
           {errors.phone && errors.phone.message && (
             <p>{errors.phone.message}</p>
