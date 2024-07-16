@@ -22,22 +22,11 @@ const Contact = () => {
     register,
     handleSubmit,
     reset,
-    watch,
-    setValue,
     formState: { errors, isValid },
   } = useForm({
     defaultValues: initialState,
     mode: "onChange",
   });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setValue(name, value);
-  };
-
-  const handlePhoneChange = (value) => {
-    setValue("phone", value, { shouldValidate: true });
-  };
 
   const myHandleSubmit = (formData) => {
     postMessage(reqTypes.POST, "/users", formData);
@@ -47,7 +36,7 @@ const Contact = () => {
       .sendForm(
         "service_ds43nbs",
         "template_u3at45q",
-        emailRef.current, // Form referansı
+        emailRef.current,
 
         "medX0XRjILOWCrjwd"
       )
@@ -78,11 +67,9 @@ const Contact = () => {
             Your name
             <input
               name="isim"
-              value={watch("isim")}
               type="text"
               className="bg-custom-headerdaire  border-2  border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
               placeholder="Your name"
-              onChange={handleChange}
               {...register("isim", {
                 required: true,
                 minLength: {
@@ -101,8 +88,6 @@ const Contact = () => {
               type="text"
               className="bg-custom-headerdaire  border-2  border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
               placeholder="Your surname"
-              value={watch("surname")}
-              onChange={handleChange}
               {...register("surname", {
                 required: true,
                 minLength: {
@@ -118,8 +103,6 @@ const Contact = () => {
           </label>
           <PhoneInput
             placeholder="Enter phone number"
-            value={watch("phone")}
-            onChange={handlePhoneChange}
             defaultCountry="tr"
             inputStyle={{
               backgroundColor: "rgba(238, 235, 255, 1)",
@@ -127,16 +110,23 @@ const Contact = () => {
               fontWeight: "bold",
             }}
             className="bg-custom-headerdaire  border-2 border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
+            {...register("phone", {
+              required: true,
+              minLength: {
+                value: 11,
+                message: "Must be at least ten characters",
+              },
+            })}
           />
-          {errors.phone && <p>{errors.phone.message}</p>}
+          {errors.phone && errors.phone.message && (
+            <p>{errors.phone.message}</p>
+          )}
 
           <label className="block mb-2 text-sm mt-0 font-medium text-custom-daire dark:text-custom-daire">
             Your message
             <textarea
               name="textarea"
               type="textarea"
-              value={watch("textarea")}
-              onChange={handleChange}
               className="bg-custom-headerdaire  border-2 h-[200px] border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
               placeholder="Your message"
               {...register("textarea", {
