@@ -87,7 +87,7 @@ export const trData = [
         technologies: ["React", "CSS3", "HTML5", "JavaScript"],
         github: "https://github.com/alicansadeler/teknolojikyemekler",
         live: "https://teknolojikyemekler.vercel.app/",
-        image: "/src/assets/projectsResim/project1.jpg",
+        image: "./assets/projectsResim/project1.jpg",
       },
       {
         title: "TwitterClone",
@@ -102,7 +102,7 @@ export const trData = [
         ],
         github: "https://github.com/alicansadeler/twitterclone",
         live: "https://twitterclone-iota-fawn.vercel.app/",
-        image: "/src/assets/projectsResim/project2.jpg",
+        image: "./assets/projectsResim/project2.jpg",
       },
       {
         title: "N11 Test Otomasyonu",
@@ -116,7 +116,7 @@ export const trData = [
           "Maven",
         ],
         github: "https://github.com/alicansadeler/n11testautomation",
-        image: "/src/assets/projectsResim/project3.png",
+        image: "./assets/projectsResim/project3.png",
       },
     ],
   },
