@@ -12,6 +12,20 @@ import {
 } from "react-icons/fa";
 import LoadingSpinner from "../components/LoadingSpinner";
 
+// Resimleri import et
+import project1Img from "../assets/projectsResim/project1.jpg";
+import project2Img from "../assets/projectsResim/project2.jpg";
+import project3Img from "../assets/projectsResim/project3.png";
+
+// Proje resimlerini eşleştir
+const projectImages = {
+  "Teknolojik Yemekler": project1Img,
+  TwitterClone: project2Img,
+  "N11 Test Otomasyonu": project3Img,
+  "Technological Dishes": project1Img,
+  "N11 Test Automation": project3Img,
+};
+
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -109,7 +123,7 @@ export default function Projects() {
                 <div className="relative">
                   <img
                     className="w-full h-48 md:h-64 object-cover group-hover:opacity-75 transition-opacity duration-300"
-                    src={proje.image}
+                    src={projectImages[proje.title]}
                     alt={proje.title}
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
@@ -210,7 +224,7 @@ export default function Projects() {
 
                       <div className="mt-4">
                         <img
-                          src={selectedProject.image}
+                          src={projectImages[selectedProject.title]}
                           alt={selectedProject.title}
                           className="w-full h-64 object-cover rounded-lg mb-6"
                         />

@@ -87,7 +87,6 @@ export const euData = [
         technologies: ["React", "CSS3", "HTML5", "JavaScript"],
         github: "https://github.com/alicansadeler/teknolojikyemekler",
         live: "https://teknolojikyemekler.vercel.app/",
-        image: "./assets/projectsResim/project1.jpg",
       },
       {
         title: "TwitterClone",
