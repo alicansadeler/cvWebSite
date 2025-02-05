@@ -39,7 +39,6 @@ const Contact = () => {
         "service_ds43nbs",
         "template_u3at45q",
         emailRef.current,
-
         "medX0XRjILOWCrjwd"
       )
       .then(
@@ -121,27 +120,32 @@ const Contact = () => {
             Your Phone
           </label>
 
-          <PhoneInput
+          <Controller
             name="phone"
-            placeholder="Enter phone number"
-            defaultCountry="tr"
-            inputStyle={{
-              backgroundColor: "rgba(238, 235, 255, 1)",
-              color: "rgba(107, 114, 128, 1)",
-              fontWeight: "bold",
-            }}
-            className="bg-custom-headerdaire border-2 border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
-            {...register("phone", {
-              required: true,
+            control={control}
+            rules={{
+              required: "Phone number is required",
               minLength: {
-                value: 11,
-                message: "Must be at least 10 characters",
+                value: 10,
+                message: "Phone number must be at least 10 digits",
               },
-            })}
+            }}
+            render={({ field: { onChange, value } }) => (
+              <PhoneInput
+                defaultCountry="tr"
+                value={value}
+                onChange={(phone) => onChange(phone)}
+                inputStyle={{
+                  backgroundColor: "rgba(238, 235, 255, 1)",
+                  color: "rgba(107, 114, 128, 1)",
+                  fontWeight: "bold",
+                }}
+                className="bg-custom-headerdaire border-2 border-custom-daire placeholder-custom-navbartext dark:placeholder-custom-navbartext text-sm rounded-lg focus:ring-custom-daire focus:border-custom-daire w-full p-2.5 dark:border-custom-daire"
+              />
+            )}
           />
-
-          {errors.phone && errors.phone.message && (
-            <p>{errors.phone.message}</p>
+          {errors.phone && (
+            <p className="text-red-500">{errors.phone.message}</p>
           )}
 
           <label className="block mb-2 text-sm mt-0 font-medium text-custom-daire dark:text-custom-daire">

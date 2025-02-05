@@ -1,5 +1,7 @@
-import axios from "axios";
 import { toast } from "react-toastify";
+import { trData } from "../../data/trData";
+import { euData } from "../../data/euData";
+
 export const GET_TR = "TR DATA GETIR";
 export const GET_EU = "EU DATA GETIR";
 export const ACT_LANG = "DATA DIL TERCIHI";
@@ -28,61 +30,38 @@ export const actLang = () => {
 
 export const getDataTrAPI = () => (dispatch) => {
   dispatch(setLoading(true));
-  toast.info("Yükleniyor...", {
-    position: "top-center",
-    autoClose: 500,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-  });
-  setTimeout(() => {
-    axios
-      .get("https://668bdc690b61b8d23b0b7836.mockapi.io/acs/activetr")
-      .then(function (response) {
-        if (response.status === 200) {
-          dispatch(getDataEU(response.data));
-        }
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error.message);
-      })
-      .finally(function () {
-        // always executed
-      });
-  }, 600);
+
+  try {
+    dispatch(getDataTR(trData));
+    toast.success("Veriler başarıyla yüklendi", {
+      position: "top-center",
+      autoClose: 1000,
+    });
+  } catch (error) {
+    toast.error("Veri yüklenirken bir hata oluştu", {
+      position: "top-center",
+      autoClose: 2000,
+    });
+  } finally {
+    dispatch(setLoading(false));
+  }
 };
 
 export const getDataEuAPI = () => (dispatch) => {
   dispatch(setLoading(true));
-  toast.info("Loading...", {
-    position: "top-center",
-    autoClose: 500,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-  });
 
-  setTimeout(() => {
-    axios
-      .get("https://668bdc690b61b8d23b0b7836.mockapi.io/acs/activeeu")
-      .then(function (response) {
-        if (response.status === 200) {
-          dispatch(getDataEU(response.data));
-        }
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error.message);
-      })
-      .finally(function () {
-        // always executed
-      });
-  }, 600);
+  try {
+    dispatch(getDataEU(euData));
+    toast.success("Data loaded successfully", {
+      position: "top-center",
+      autoClose: 1000,
+    });
+  } catch (error) {
+    toast.error("Error loading data", {
+      position: "top-center",
+      autoClose: 2000,
+    });
+  } finally {
+    dispatch(setLoading(false));
+  }
 };

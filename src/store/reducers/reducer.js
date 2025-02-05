@@ -10,8 +10,8 @@ const darkMode = () => {
 
 const initialState = {
   data: [],
-  active: JSON.parse(localStorage.getItem("active")) || false,
-  loading: true,
+  active: JSON.parse(localStorage.getItem("active")) || true,
+  loading: false,
   mode: darkMode(),
 };
 

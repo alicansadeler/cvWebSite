@@ -21,58 +21,59 @@ const Hero = () => {
   const heroData = data[0][0].hero;
 
   return (
-    <div className="space-y-8 md:text-left sm:text-left">
-      <div className="flex items-center  h-[45px] py-0">
-        <hr className="w-[6vw]   border-custom-isim bg-custom-isim sm:hidden md:block" />
-        <span className="px-3  text-custom-link font-semibold dark:text-custom-dark-h3 sm:hidden md:block">
+    <div className="space-y-8 py-8 md:py-12 px-4 md:px-8">
+      <div className="flex items-center h-12 md:h-[45px]">
+        <hr className="w-16 md:w-24 border-custom-isim bg-custom-isim hidden md:block" />
+        <span className="px-3 text-custom-link font-semibold dark:text-custom-dark-h3 hidden md:block">
           Ali Can Sadeler
         </span>
       </div>
-      <section className="md:flex md:flex-wrap-reverse md:justify-between md:w-full  sm:flex sm:flex-wrap-reverse sm:justify-center">
-        <div className="font-bold drop-shadow-xl  md:text-left  w-[37.25rem] ">
-          <h1>
-            <span className="inline-block dark:text-custom-title">
+
+      <section className="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-center md:items-start">
+        <div className="w-full md:w-[37.25rem] space-y-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+            <span className="block dark:text-custom-title mb-2">
               {heroData.title1}
             </span>
-            <br />
-            <span className="inline-block dark:text-custom-title">
+            <span className="block dark:text-custom-title">
               {heroData.title2}
             </span>
           </h1>
 
-          <p className="text-[1.125rem] font-normal drop-shadow-none leading-7 my-14 sm:text-left md:text-left">
+          <p className="text-base md:text-lg leading-relaxed dark:text-gray-300">
             {heroData.text}
           </p>
-          <div className="text-custom-link text-[1.125rem]  font-normal flex  items-start flex-wrap">
+
+          <div className="flex flex-wrap gap-4">
             <a
               href=""
-              className="text-white px-8 py-2.5 sm:hidden md:block rounded bg-custom-link border-1 border-custom-link mr-3 dark:bg-custom-dark-personal dark:border-custom-dark-personal dark:!text-custom-dark-footer"
+              className="hidden md:inline-block px-8 py-2.5 bg-custom-link text-white rounded hover:bg-opacity-90 dark:bg-custom-dark-personal dark:border-custom-dark-personal dark:text-custom-dark-footer transition-colors"
             >
-              Hire me{" "}
+              Hire me
             </a>
             <a
               href="https://github.com/alicansadeler"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-[8px] dark:bg-custom-dark-heroButton rounded border-1 border-custom-link mr-3 dark:border-custom-dark-personal dark:text-custom-dark-personal"
+              className="flex items-center px-4 py-2 border border-custom-link rounded hover:bg-custom-link hover:text-white transition-colors dark:border-custom-dark-personal dark:text-custom-dark-personal"
             >
               <img
                 src={toggle ? github : darkGit}
                 alt="github"
-                className="inline-block mr-2 text-center"
-              />{" "}
+                className="w-5 h-5 mr-2"
+              />
               Github
             </a>
             <a
               href="https://www.linkedin.com/in/acsadeler/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-[9px] dark:bg-custom-dark-heroButton border-1 border-custom-link rounded dark:border-custom-dark-personal dark:text-custom-dark-personal"
+              className="flex items-center px-4 py-2 border border-custom-link rounded hover:bg-custom-link hover:text-white transition-colors dark:border-custom-dark-personal dark:text-custom-dark-personal"
             >
               <img
                 src={toggle ? linkedn : darkLink}
                 alt="linkedn"
-                className="inline-block mr-2 text-center"
+                className="w-5 h-5 mr-2"
               />
               Linkedin
             </a>
@@ -82,7 +83,7 @@ const Hero = () => {
         <img
           src={AcsIMG}
           alt="Profil Resmi"
-          className="xl:w-[29.75rem] xl:h-[23.45rem] md:w-[29.75rem] md:h-[23.45rem]  shadow-2xl md:rounded-2xl sm:rounded-none border-1 border-black self-end"
+          className="w-full md:w-[29.75rem] h-auto rounded-2xl shadow-2xl border border-black"
         />
       </section>
     </div>

@@ -17,6 +17,7 @@ import Footer from "./pages/Footer.jsx";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 function App() {
   const toggle = useSelector((store) => store.active);
@@ -24,60 +25,66 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (toggle === false) {
-      dispatch(getDataEuAPI());
-    } else {
+    if (toggle) {
       dispatch(getDataTrAPI());
+    } else {
+      dispatch(getDataEuAPI());
     }
-  }, [dispatch, toggle]);
+  }, [toggle]);
 
-  if (loading) return;
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <LoadingSpinner />
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen flex flex-col items-center shrink px-4 md:px-6">
-      <ToastContainer />
-      <div>
-        <div className="md:max-w-6xl mx-auto sm:w-[100vw]">
-          <div className=" md:mb-6 sm:mb-0">
-            <Toogle />
-            <Header />
-          </div>
+    <div className="min-h-screen flex flex-col">
+      <div className="flex-1 max-w-7xl mx-auto w-full px-4">
+        <ToastContainer />
+        <div>
+          <div className="md:max-w-6xl mx-auto">
+            <div className="md:mb-6 sm:mb-0">
+              <Toogle />
+              <Header />
+            </div>
 
-          <div className="md:my-8 space-y-10 sm:my-0">
-            <Switch>
-              <Route path="/profiles">
-                <Profiles />
-              </Route>
-              <Route path="/contact">
-                <Contact />
-              </Route>
-              <Route path="/projects">
-                <Projects />
-              </Route>
-              <Route path="/" exact>
-                <div className="mb-12 md:mb-32">
-                  <Hero />
-                </div>
-
-                <div className="my-8">
-                  <Skills />
-                </div>
-                <hr className="my-8" />
-                <div className="my-8">
-                  <Profile />
-                </div>
-                <hr className="my-8" />
-                <div className="my-8">
+            <div className="md:my-8 space-y-10 sm:my-0">
+              <Switch>
+                <Route path="/profiles">
+                  <Profiles />
+                </Route>
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+                <Route path="/projects">
                   <Projects />
-                </div>
-              </Route>
-            </Switch>
+                </Route>
+                <Route path="/" exact>
+                  <div className="mb-12 md:mb-32">
+                    <Hero />
+                  </div>
+
+                  <div className="my-8">
+                    <Skills />
+                  </div>
+                  <hr className="my-8" />
+                  <div className="my-8">
+                    <Profile />
+                  </div>
+                  <hr className="my-8" />
+                  <div className="my-8">
+                    <Projects />
+                  </div>
+                </Route>
+              </Switch>
+            </div>
           </div>
-        </div>
-        <div className="mt-32 ">
-          <Footer />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
