@@ -110,6 +110,21 @@ export const euData = [
         github: "https://github.com/alicansadeler/n11testautomation",
         image: "./assets/projectsResim/project3.png",
       },
+      {
+        title: "FitnessApp",
+        text: "I developed a modern fitness center website using React and TypeScript. I implemented fluid animations with Framer Motion and created a responsive design using TailwindCSS. I enhanced the user experience with smooth scroll functionality and delivered a contemporary user interface.",
+        technologies: [
+          "React",
+          "TypeScript",
+          "TailwindCSS",
+          "Framer Motion",
+          "HTML5",
+          "Vite",
+        ],
+        github: "https://github.com/alicansadeler/fitness-app",
+        live: "https://fitness-app-haxki5dwr-ali-cans-projects-3311a66a.vercel.app/",
+        image: "./assets/projectsResim/project4.png",
+      },
     ],
   },
 ];
