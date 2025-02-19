@@ -117,10 +117,7 @@ export const trData = [
       },
       {
         title: "FitnessApp",
-        text: {
-          tr: "React ve TypeScript kullanarak modern bir fitness merkezi web sitesi geliştirdim. Framer Motion ile akıcı animasyonlar ekledim ve TailwindCSS ile responsive tasarım uyguladım. Smooth scroll özelliği ile sayfa içi gezinmeyi kolaylaştırdım ve modern bir kullanıcı deneyimi sundum.",
-          en: "I developed a modern fitness center website using React and TypeScript. I implemented fluid animations with Framer Motion and created a responsive design using TailwindCSS. I enhanced the user experience with smooth scroll functionality and delivered a contemporary user interface.",
-        },
+        text: "React ve TypeScript kullanarak modern bir fitness merkezi web sitesi geliştirdim. Framer Motion ile akıcı animasyonlar ekledim ve TailwindCSS ile responsive tasarım uyguladım. Smooth scroll özelliği ile sayfa içi gezinmeyi kolaylaştırdım ve modern bir kullanıcı deneyimi sundum.",
         technologies: [
           "React",
           "TypeScript",

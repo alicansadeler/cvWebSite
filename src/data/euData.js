@@ -122,7 +122,6 @@ export const euData = [
           "Vite",
         ],
         github: "https://github.com/alicansadeler/fitness-app",
-        live: "https://fitness-app-haxki5dwr-ali-cans-projects-3311a66a.vercel.app/",
         image: "./assets/projectsResim/project4.png",
       },
     ],

@@ -16,14 +16,16 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import project1Img from "../assets/projectsResim/project1.jpg";
 import project2Img from "../assets/projectsResim/project2.jpg";
 import project3Img from "../assets/projectsResim/project3.png";
+import project4Img from "../assets/projectsResim/project4.png";
 
 // Proje resimlerini eşleştir
 const projectImages = {
   "Teknolojik Yemekler": project1Img,
-  TwitterClone: project2Img,
+  "TwitterClone": project2Img,
   "N11 Test Otomasyonu": project3Img,
   "Technological Dishes": project1Img,
   "N11 Test Automation": project3Img,
+  "FitnessApp": project4Img,
 };
 
 export default function Projects() {
